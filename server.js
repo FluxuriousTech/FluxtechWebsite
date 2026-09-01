@@ -35,8 +35,8 @@ const accountSid = 'YOUR_TWILIO_ACCOUNT_SID';
 const authToken = 'YOUR_TWILIO_AUTH_TOKEN';
 const client = twilio(accountSid, authToken);
 
-// WhatsApp numbers
-const whatsappNumbers = ['+919967846507'];
+// WhatsApp numbers (e.g. ['+1234567890'])
+const whatsappNumbers = ['YOUR_PHONE_NUMBER_HERE'];
 
 // Route to send PDF to WhatsApp
 app.post('/send-pdf-whatsapp', upload.single('pdf'), async (req, res) => {

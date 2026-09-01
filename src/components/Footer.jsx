@@ -34,7 +34,7 @@ const Footer = () => {
             <h4>Contact</h4>
             <ul>
               <li>Email: <a href="mailto:support@fluxurioustech.com">support@fluxurioustech.com</a></li>
-              <li>Phone: <a href="tel:+919967846507">+91 9967846507</a></li>
+              <li>Phone: <a href="tel:+918591903004">+91 8591903004</a></li>
               <li>Address: Thane, Maharashtra</li>
             </ul>
           </div>

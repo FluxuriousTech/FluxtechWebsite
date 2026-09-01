@@ -7,7 +7,8 @@ import { motion } from 'framer-motion';
 
 const WhatsApp = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '9967846507';
+    // Replace with your WhatsApp number including country code without '+' or spaces (e.g. '1234567890')
+    const phoneNumber = '918591903004';
     const message = encodeURIComponent('Hi Fluxurious Tech! I checked out your website and have a project in mind. Would love to talk about how we can work together.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
