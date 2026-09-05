@@ -90,6 +90,23 @@
   animation: slideInRight 1s ease-out 0.5s both;
 }
 
+.pricing-lottie-container {
+  width: 100%;
+  max-width: 500px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: transparent;
+}
+
+.pricing-lottie-container svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .hero-image {
   width: 100%;
   max-width: 600px;
@@ -205,6 +222,11 @@
   .hero-image {
     max-width: 400px;
   }
+
+  .pricing-lottie-container {
+    max-width: 420px;
+    height: 330px;
+  }
   
   .hero-title {
     font-size: 3.5rem;
@@ -252,6 +274,12 @@
     max-width: 500px;
     width: 100%;
   }
+
+  .pricing-lottie-container {
+    max-width: 360px;
+    height: 280px;
+    width: 100%;
+  }
   
   .hero-buttons {
     flex-direction: row;
@@ -281,23 +309,28 @@
   .hero-description {
     font-size: 0.9rem;
     text-align: center;
-    }
+  }
   
   .hero-image {
     max-width: 450px;
-    }
+  }
+
+  .pricing-lottie-container {
+    max-width: 280px;
+    height: 220px;
+  }
   
   .hero-content {
     gap: 1rem;
-      text-align: center;
-    }
+    text-align: center;
+  }
   
   .hero-buttons {
-      flex-direction: row;
-      gap: 1rem;
-      justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
     align-items: center;
-    }
+  }
 }
 
 @media (max-width: 360px) {
@@ -320,11 +353,16 @@
   .hero-image {
     max-width: 400px;
   }
+
+  .pricing-lottie-container {
+    max-width: 240px;
+    height: 190px;
+  }
   
   .hero-buttons {
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    }
-  } 
+  }
+} 
