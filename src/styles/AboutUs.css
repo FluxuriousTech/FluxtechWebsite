@@ -122,6 +122,23 @@
   animation: slideInRight 1s ease-out 0.5s both;
 }
 
+.about-lottie-container {
+  width: 100%;
+  max-width: 520px;
+  height: 390px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: transparent;
+}
+
+.about-lottie-container svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .hero-image {
   width: 100%;
   max-width: 420px;
@@ -431,6 +448,11 @@
   .hero-image {
     max-width: 400px;
   }
+
+  .about-lottie-container {
+    max-width: 440px;
+    height: 330px;
+  }
   
   .hero-title {
     font-size: 3.5rem;
@@ -487,6 +509,11 @@
 
   .hero-image {
     max-width: 350px;
+  }
+
+  .about-lottie-container {
+    max-width: 380px;
+    height: 285px;
   }
 
   .section-title,
@@ -550,6 +577,11 @@
 
   .hero-image {
     max-width: 280px;
+  }
+
+  .about-lottie-container {
+    max-width: 300px;
+    height: 225px;
   }
 
   .section-title,

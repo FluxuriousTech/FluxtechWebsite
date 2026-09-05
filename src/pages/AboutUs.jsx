@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Button2 from '../components/Button2.jsx';
 import '../styles/AboutUs.css';
 import BlurImage from '../assets/Blur.png';
 import BottomPattern from '../assets/bottom_pattern.png';
-import AboutUsHeroImage from '../assets/AboutUsHero.png';
 import TeamWorkImage from '../assets/TeamWork.png';
+import lottie from 'lottie-web';
+import teamAnimation from '../assets/lottie_animations/team.json';
 import { motion } from 'framer-motion';
 
 const AboutUs = () => {
+  const animContainer = useRef(null);
+
+  useEffect(() => {
+    if (!animContainer.current) return;
+
+    animContainer.current.innerHTML = '';
+
+    const animInstance = lottie.loadAnimation({
+      container: animContainer.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: teamAnimation,
+    });
+
+    return () => {
+      animInstance.destroy();
+    };
+  }, []);
+
   const stats = [
     { number: "150+", label: "Projects Delivered" },
     { number: "50+", label: "Happy Clients" },
@@ -41,9 +62,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="hero-visual">
-            <div className="hero-image">
-              <img src={AboutUsHeroImage} alt="About Us Hero" />
-            </div>
+            <div className="about-lottie-container" ref={animContainer}></div>
           </div>
         </div>
       </section>
