@@ -116,7 +116,7 @@ const WebDev4 = () => {
           <div className="webdev1-title">{project.title}</div>
           <div className="webdev1-subheader">{project.subheader}</div>
           <div className="webdev1-description">{project.description}</div>
-          <Button2 onClick={() => alert('View Project clicked!')} style={{ width: 'fit-content', minWidth: '40px' }}>View Project</Button2>
+          <Button2 href="https://bayside-seven.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ width: 'fit-content', minWidth: '40px' }}>Visit Website</Button2>
         </motion.div>
       </motion.div>
       {/* HERO SECTION - Unified across all WebDev pages */}

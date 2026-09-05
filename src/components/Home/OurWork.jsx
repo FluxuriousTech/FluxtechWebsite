@@ -22,7 +22,7 @@ const OurWork = () => {
       categories: ["Web Development", "Sports", "E-commerce"],
       image: BaysideSports,
       description: "Modern sports equipment e-commerce platform with advanced features and seamless user experience",
-      url: "/projects/webdev/1"
+      url: "/projects/webdev/4"
     },
     {
       title: "Gym Website",
@@ -36,7 +36,7 @@ const OurWork = () => {
       categories: ["Web Development", "Finance", "Investment"],
       image: NetwealthIndia,
       description: "Financial services platform for investment management and wealth planning",
-      url: "/projects/webdev/3"
+      url: "/projects/webdev/1"
     },
     // WebDesign Projects
     {

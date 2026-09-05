@@ -2,437 +2,515 @@ import React, { useState } from 'react';
 import '../../styles/Services/ComprehensiveServices.css';
 import { 
   Palette, Code, Database, MessageCircle, Search, Server, 
-  Smartphone, Globe, Zap, Shield, BarChart3, Users,
-  CheckCircle, Clock, DollarSign, Star, Award, Target
+  Smartphone, Globe, Zap, Shield, CheckCircle2, ChevronDown,
+  Clock, ArrowRight, Layers, Cpu, Sparkles
 } from 'lucide-react';
 import BlurEffect from '../../assets/Blur.png';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const comprehensiveServices = [
   {
+    id: 'ui-ux',
     title: 'UI/UX Design',
-    description: 'Stunning interfaces and seamless user experiences.',
+    tagline: 'High-converting design systems & interactive prototypes.',
     icon: Palette,
     category: 'Design',
-    features: [
-      'User Research & Persona Development',
-      'Wireframing & Prototyping',
-      'Visual Design & Branding',
-      'Usability Testing & Optimization',
-      'Design Systems & Component Libraries',
-      'Interactive Prototypes & Animations',
-      'Responsive Design for All Devices',
-      'Design Handoff & Documentation'
+    badge: 'Design First',
+    turnaround: '3-5 Days',
+    projectType: 'ui-ux',
+    techStack: ['Figma', 'Protopie', 'Design Tokens', 'Tailwind'],
+    highlights: [
+      'User Research & Wireframing',
+      'Figma Component Design System',
+      'Interactive High-Fidelity Prototypes',
+      'Mobile-First Responsive Layouts',
+      'Developer-Ready Handoff'
     ],
+    deliverable: 'Figma Source Files + Interactive Prototype + Style Guide',
     process: [
-      'Discovery & Research',
-      'Wireframing & Prototyping',
-      'Visual Design',
-      'User Testing',
-      'Refinement & Delivery'
-    ],
-    deliverables: [
-      'High-fidelity mockups',
-      'Interactive prototypes',
-      'Design system documentation',
-      'User flow diagrams',
-      'Style guide'
+      'Discovery & Brand Alignment',
+      'Wireframing & Information Architecture',
+      'Visual Design & Design System',
+      'Interactive Prototyping & Usability Review',
+      'Full Asset Export & Dev Handoff'
     ]
   },
   {
+    id: 'frontend',
     title: 'Frontend Development',
-    description: 'Responsive web apps with modern frameworks.',
+    tagline: 'Blazing fast, animated, and pixel-perfect web experiences.',
     icon: Code,
     category: 'Development',
-    features: [
-      'React, Vue, and Angular Development',
-      'Responsive & Mobile-First Design',
-      'Progressive Web Apps (PWA)',
-      'Performance Optimization',
-      'Cross-Browser Compatibility',
-      'Modern CSS & Animations',
-      'State Management Solutions',
-      'API Integration & Testing'
+    badge: 'Popular',
+    turnaround: '5-7 Days',
+    projectType: 'web-development',
+    techStack: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion'],
+    highlights: [
+      'Modern Single Page & Multi-Page Apps',
+      'Smooth 60fps Micro-interactions & Animations',
+      'Mobile-First & 100% Cross-Browser Support',
+      'Core Web Vitals & 95+ PageSpeed Optimization',
+      'REST & GraphQL API Integration'
     ],
+    deliverable: 'Clean Modular Source Code + Live Deployment + Docs',
     process: [
-      'Planning & Architecture',
-      'Component Development',
-      'Integration & Testing',
-      'Performance Optimization',
-      'Deployment & Launch'
-    ],
-    deliverables: [
-      'Fully responsive website',
-      'Optimized for performance',
-      'Cross-browser compatible',
-      'SEO optimized code',
-      'Documentation & maintenance guide'
+      'UI Architecture & Component Setup',
+      'Interactive Views & State Management',
+      'API Hooks & Data Integration',
+      'Cross-Device Polish & Speed Tuning',
+      'Production Deployment'
     ]
   },
   {
-    title: 'Backend Development',
-    description: 'Robust server solutions and database architecture.',
+    id: 'backend',
+    title: 'Backend & Database Systems',
+    tagline: 'Scalable APIs, resilient database architecture, and security.',
     icon: Database,
     category: 'Development',
-    features: [
-      'Node.js, Python, and PHP Development',
-      'RESTful APIs and GraphQL',
-      'Database Design & Optimization',
-      'Authentication & Authorization',
-      'Cloud Deployment & Scaling',
-      'Security & Data Protection',
-      'API Documentation',
-      'Database Migration & Backup'
+    badge: 'Core Tech',
+    turnaround: '5-7 Days',
+    projectType: 'full-stack',
+    techStack: ['Node.js', 'Python', 'PostgreSQL', 'Redis', 'Docker'],
+    highlights: [
+      'RESTful & GraphQL API Architecture',
+      'Relational & NoSQL Schema Design',
+      'JWT Auth, OAuth & Role-Based Access Control',
+      'Caching, Rate Limiting & Query Optimization',
+      'Automated Database Backups & Migration Pipelines'
     ],
+    deliverable: 'Tested Backend API + OpenAPI/Swagger Docs + DB Schema',
     process: [
-      'Requirements Analysis',
-      'Database Design',
-      'API Development',
-      'Security Implementation',
-      'Testing & Deployment'
-    ],
-    deliverables: [
-      'Secure backend API',
-      'Database schema',
-      'API documentation',
-      'Deployment scripts',
-      'Security audit report'
+      'Data Modeling & Schema Architecture',
+      'API Endpoint & Business Logic Creation',
+      'Authentication & Security Hardening',
+      'Stress Testing & Caching',
+      'Cloud Provisioning & Live Deployment'
     ]
   },
   {
+    id: 'mobile',
     title: 'Mobile App Development',
-    description: 'Native and cross-platform mobile applications.',
+    tagline: 'Cross-platform iOS and Android apps with native feel.',
     icon: Smartphone,
     category: 'Development',
-    features: [
-      'iOS & Android Development',
-      'React Native & Flutter',
-      'Native App Development',
-      'Push Notifications',
-      'Offline Functionality',
-      'App Store Optimization',
-      'Performance Optimization',
-      'Cross-Platform Compatibility'
+    badge: 'High Impact',
+    turnaround: '7-14 Days',
+    projectType: 'mobile-app',
+    techStack: ['React Native', 'Flutter', 'Expo', 'Firebase', 'Native APIs'],
+    highlights: [
+      'Universal iOS & Android Single Codebase',
+      'Push Notifications & Offline Data Caching',
+      'Hardware Access (Camera, Biometrics, GPS)',
+      'Smooth 60fps Native Gestures & Transitions',
+      'App Store & Play Store Ready Builds'
     ],
+    deliverable: 'Production APK/IPA Builds + Source Repository + Setup Guide',
     process: [
-      'App Planning & Design',
-      'Development & Testing',
-      'App Store Submission',
-      'Launch & Marketing',
-      'Ongoing Support'
-    ],
-    deliverables: [
-      'Native mobile apps',
-      'App store listings',
-      'Push notification setup',
-      'Analytics integration',
-      'App maintenance plan'
+      'App Architecture & UI Prototyping',
+      'Core Feature Implementation',
+      'Native Module & Push Integration',
+      'Multi-Device Emulation & Device Testing',
+      'Store Submission Preparation'
     ]
   },
   {
-    title: 'E-commerce Solutions',
-    description: 'Complete online store development and optimization.',
-    icon: Globe,
-    category: 'Business',
-    features: [
-      'Custom E-commerce Platforms',
-      'Payment Gateway Integration',
-      'Inventory Management',
-      'Order Processing System',
-      'Customer Management',
-      'Analytics & Reporting',
-      'Multi-vendor Support',
-      'Mobile Commerce'
-    ],
-    process: [
-      'Store Planning',
-      'Design & Development',
-      'Payment Integration',
-      'Testing & Launch',
-      'Training & Support'
-    ],
-    deliverables: [
-      'Custom e-commerce website',
-      'Payment processing setup',
-      'Inventory management system',
-      'Admin dashboard',
-      'Training documentation'
-    ]
-  },
-  {
-    title: 'AI & Chatbot Development',
-    description: 'Intelligent AI for customer engagement.',
-    icon: MessageCircle,
-    category: 'AI',
-    features: [
-      'Custom Chatbot Development',
-      'Natural Language Processing',
-      'Integration with Messaging Platforms',
-      '24/7 Customer Support Automation',
-      'Lead Generation & Qualification',
-      'Analytics & Performance Tracking',
-      'Multi-language Support',
-      'Voice Assistant Integration'
-    ],
-    process: [
-      'Requirements Gathering',
-      'AI Model Training',
-      'Integration & Testing',
-      'Deployment & Monitoring',
-      'Performance Optimization'
-    ],
-    deliverables: [
-      'Custom chatbot solution',
-      'Integration documentation',
-      'Analytics dashboard',
-      'Training materials',
-      'Ongoing support plan'
-    ]
-  },
-  {
-    title: 'SEO & Digital Marketing',
-    description: 'Search engine optimization and local discovery.',
-    icon: Search,
-    category: 'Marketing',
-    features: [
-      'Technical SEO Optimization',
-      'Local Search Optimization',
-      'Keyword Research & Strategy',
-      'Content Optimization',
-      'Google My Business Management',
-      'Performance Monitoring',
-      'Link Building',
-      'Competitor Analysis'
-    ],
-    process: [
-      'SEO Audit',
-      'Strategy Development',
-      'Implementation',
-      'Monitoring & Reporting',
-      'Continuous Optimization'
-    ],
-    deliverables: [
-      'SEO audit report',
-      'Keyword strategy',
-      'Monthly performance reports',
-      'Content optimization',
-      'Analytics setup'
-    ]
-  },
-  {
-    title: 'Full Stack Development',
-    description: 'Complete development with seamless deployment.',
+    id: 'fullstack',
+    title: 'Full Stack & Cloud Deployment',
+    tagline: 'End-to-end turnkey platforms built from scratch to launch.',
     icon: Server,
     category: 'Development',
-    features: [
-      'End-to-End Web Application Development',
-      'DevOps & CI/CD Pipelines',
-      'Cloud Infrastructure Setup',
-      'Domain & Hosting Management',
-      'SSL Certificates & Security',
-      'Ongoing Maintenance & Updates',
-      'Performance Monitoring',
-      'Scalability Planning'
+    badge: 'Full Suite',
+    turnaround: '7-10 Days',
+    projectType: 'full-stack',
+    techStack: ['React/Next.js', 'Node.js', 'PostgreSQL', 'AWS/Vercel', 'CI/CD'],
+    highlights: [
+      'Complete Unified Web Application Architecture',
+      'Automated CI/CD Deployment Pipelines',
+      'Custom Domain, SSL & Cloudflare CDN Setup',
+      'Cloud Hosting (AWS, Vercel, Supabase)',
+      'Full Monitoring, Analytics & Error Logging'
     ],
+    deliverable: 'Turnkey Live Application + Full Admin Privileges & Docs',
     process: [
-      'Project Planning',
-      'Development Phase',
-      'Testing & Quality Assurance',
-      'Deployment & Launch',
-      'Post-Launch Support'
+      'Full System Architecture & Roadmap',
+      'Simultaneous Frontend & Backend Sprints',
+      'End-to-End Integration & Security Audit',
+      'Staging Deployment & QA Validation',
+      'Production Launch & Post-Launch Handover'
+    ]
+  },
+  {
+    id: 'ecommerce',
+    title: 'E-Commerce & Payment Engines',
+    tagline: 'High-converting online stores with bulletproof checkout.',
+    icon: Globe,
+    category: 'Business',
+    badge: 'Revenue Focused',
+    turnaround: '5-7 Days',
+    projectType: 'web-development',
+    techStack: ['Stripe', 'Razorpay', 'Next.js', 'Shopify/Custom', 'Tailwind'],
+    highlights: [
+      'Seamless Checkout & Multi-Currency Gateways',
+      'Catalog, Inventory & Variant Management',
+      'Customer Order Tracking & Email Receipts',
+      'Discount Coupons & Upsell Recommendation Logic',
+      'Mobile-Optimized 1-Click Purchase Experience'
     ],
-    deliverables: [
-      'Complete web application',
-      'Deployment documentation',
-      'Maintenance plan',
-      'Performance monitoring',
-      'Training & support'
+    deliverable: 'Ready-to-Sell Online Store + Gateway Integration + Training',
+    process: [
+      'Product Schema & Catalog Blueprint',
+      'Storefront UI & Cart Flow Engineering',
+      'Payment Gateway & Webhook Integration',
+      'Order Lifecycle & Tax Testing',
+      'Live Launch & Payment Verification'
+    ]
+  },
+  {
+    id: 'ai-chatbot',
+    title: 'AI Agents & Smart Chatbots',
+    tagline: 'Intelligent automated customer engagement and workflows.',
+    icon: MessageCircle,
+    category: 'AI',
+    badge: 'Next-Gen',
+    turnaround: '3-5 Days',
+    projectType: 'other',
+    techStack: ['OpenAI / Gemini', 'LangChain', 'Vector DB', 'WhatsApp API'],
+    highlights: [
+      'Custom Context-Aware Knowledge Base Q&A',
+      'WhatsApp & Website Embeddable Widgets',
+      '24/7 Automated Lead Capture & Qualification',
+      'CRM & Google Sheets Instant Sync',
+      'Smart Human Agent Fallback Routing'
+    ],
+    deliverable: 'Embedded Chatbot / WhatsApp Bot + Admin Control Dashboard',
+    process: [
+      'Knowledge Base Ingestion & Prompt Tuning',
+      'Bot Conversational Logic & Tool Calling',
+      'Platform Integration (Web / WhatsApp)',
+      'Accuracy & Guardrail Testing',
+      'Monitoring & Performance Tuning'
+    ]
+  },
+  {
+    id: 'seo-marketing',
+    title: 'SEO & Organic Growth',
+    tagline: 'Rank higher on Google with technical SEO and structured data.',
+    icon: Search,
+    category: 'Marketing',
+    badge: 'Growth Engine',
+    turnaround: '3-5 Days',
+    projectType: 'consultation',
+    techStack: ['Schema.org', 'Google Search Console', 'Ahrefs', 'Next SEO'],
+    highlights: [
+      'Technical SEO Audit & Speed Fixes',
+      'Rich Snippets & JSON-LD Structured Data',
+      'Keyword Research & High-Intent Page Targeting',
+      'Google Search Console & Analytics Setup',
+      'Local GEO Ranking & Google Business Optimization'
+    ],
+    deliverable: 'Audit Report + On-Page Implementation + Actionable Roadmap',
+    process: [
+      'Deep Technical SEO & Crawl Audit',
+      'Keyword Strategy & Content Architecture',
+      'Meta Tags, Schema & Canonical Fixes',
+      'Sitemap & Indexing Submission',
+      'Ranking Baseline & Performance Dashboard'
     ]
   }
 ];
 
-
-
 const processSteps = [
   {
-    step: 1,
-    title: 'Discovery & Planning',
-    description: 'We start by understanding your business goals, target audience, and MVP requirements.',
-    icon: Target
+    step: '01',
+    title: 'Discovery & Scope',
+    description: 'We align on your product vision, define must-have features, and create a locked 7-day or sprint delivery roadmap.',
+    icon: Layers
   },
   {
-    step: 2,
-    title: 'Design & Prototyping',
-    description: 'Creating wireframes, mockups, and interactive prototypes to visualize your MVP solution.',
+    step: '02',
+    title: 'Architecture & UI Design',
+    description: 'Crafting responsive layouts, interactive components, and database schemas with crystal-clear visual hierarchy.',
     icon: Palette
   },
   {
-    step: 3,
-    title: 'Development & Testing',
-    description: 'Building your MVP with clean, scalable code and thorough testing.',
+    step: '03',
+    title: 'Agile Development',
+    description: 'Writing high-performance, modular code backed by automated testing and continuous preview staging links.',
     icon: Code
   },
   {
-    step: 4,
-    title: 'Deployment & Launch',
-    description: 'Deploying your MVP with proper hosting, security, and performance optimization.',
+    step: '04',
+    title: 'QA & Optimization',
+    description: 'Rigorous cross-device testing, lighthouse speed tuning, SSL security, and payment/database stress testing.',
     icon: Zap
   },
   {
-    step: 5,
-    title: 'Support & Maintenance',
-    description: 'Ongoing support, updates, and maintenance to keep your MVP running smoothly.',
+    step: '05',
+    title: 'Launch & Handover',
+    description: 'Deploying to production, configuring custom domains, and handing over 100% IP code ownership with complete docs.',
     icon: Shield
   }
 ];
 
-const ComprehensiveServices = () => {
-  const [hoveredService, setHoveredService] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+const trustBadges = [
+  { icon: Clock, title: 'Rapid Delivery', subtitle: 'Turnaround in 3 to 7 days' },
+  { icon: Cpu, title: 'Clean Architecture', subtitle: 'Modular, scalable code' },
+  { icon: Shield, title: '100% IP Ownership', subtitle: 'Full code & design handover' },
+  { icon: Sparkles, title: 'Clear Communication', subtitle: 'Direct developer access' }
+];
 
-  const categories = ['All', 'Design', 'Development', 'Business', 'AI', 'Marketing'];
+const ComprehensiveServices = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [expandedProcess, setExpandedProcess] = useState(null);
+  const navigate = useNavigate();
+
+  const categories = ['All', 'Development', 'Design', 'Business', 'AI', 'Marketing'];
 
   const filteredServices = selectedCategory === 'All' 
     ? comprehensiveServices 
     : comprehensiveServices.filter(service => service.category === selectedCategory);
 
+  const toggleProcess = (id) => {
+    setExpandedProcess(prev => prev === id ? null : id);
+  };
+
+  const handleInquire = () => {
+    navigate('/contact');
+  };
+
   return (
     <section className="comprehensive-services">
       <img src={BlurEffect} alt="" className="blur-top-effect" />
       
-      {/* Hero Section */}
-      <div className="services-hero">
+      {/* Section Header */}
+      <div className="services-section-header">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="hero-content"
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="header-pill"
         >
-          <h1>Comprehensive Digital Solutions</h1>
-          <p>From concept to deployment, we deliver end-to-end digital solutions that drive business growth and user engagement.</p>
+          <Sparkles size={14} className="pill-icon" />
+          <span>Tailored Engineering & Design</span>
         </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="section-title"
+        >
+          Everything You Need to <span className="gradient-text">Build, Launch & Scale</span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="section-subtitle"
+        >
+          All deliverables, tech stacks, and features clearly defined upfront — no guesswork, no bloated timelines.
+        </motion.p>
       </div>
 
-      {/* Category Filter */}
-      <div className="category-filter">
-        <div className="filter-container">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category)}
+      {/* Trust Highlights Strip */}
+      <div className="trust-strip-container">
+        <div className="trust-strip">
+          {trustBadges.map((badge, idx) => (
+            <motion.div 
+              key={idx} 
+              className="trust-badge-item"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              {category}
-            </button>
+              <div className="trust-icon-box">
+                <badge.icon size={20} />
+              </div>
+              <div className="trust-badge-text">
+                <strong>{badge.title}</strong>
+                <span>{badge.subtitle}</span>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Services Grid */}
-      <div className="services-container">
-        <div className="services-grid">
-          {filteredServices.map((service, index) => (
-            <motion.div
-              key={index}
-              className={`service-card ${hoveredService === index ? 'hovered' : ''}`}
-              onMouseEnter={() => setHoveredService(index)}
-              onMouseLeave={() => setHoveredService(null)}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="service-header">
-                <div className="service-icon">
-                  <service.icon size={40} />
-                </div>
-                                 <div className="service-info">
-                   <h3>{service.title}</h3>
-                   <p className="service-description">{service.description}</p>
-                 </div>
-              </div>
+      {/* Category Filter Pills */}
+      <div className="category-filter-wrapper">
+        <div className="category-filter-bar">
+          {categories.map((cat) => {
+            const count = cat === 'All' 
+              ? comprehensiveServices.length 
+              : comprehensiveServices.filter(s => s.category === cat).length;
+            const isActive = selectedCategory === cat;
 
-              {/* Hover Details */}
-              <motion.div
-                className="service-details"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{
-                  opacity: hoveredService === index ? 1 : 0,
-                  height: hoveredService === index ? 'auto' : 0
-                }}
-                transition={{ duration: 0.3 }}
+            return (
+              <button
+                key={cat}
+                className={`category-chip ${isActive ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(cat)}
               >
-                <div className="details-section">
-                  <h4>What's Included:</h4>
-                  <ul>
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>
-                        <CheckCircle size={16} />
-                        {feature}
+                <span>{cat}</span>
+                <span className="chip-count">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Structured Services Grid */}
+      <div className="services-container">
+        <div className="services-modern-grid">
+          {filteredServices.map((service, index) => {
+            const Icon = service.icon;
+            const isProcessOpen = expandedProcess === service.id;
+
+            return (
+              <motion.div
+                key={service.id}
+                className="service-card-modern"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+              >
+                {/* Top Row: Category badge + Turnaround Pill */}
+                <div className="card-top-bar">
+                  <span className="card-badge">{service.badge}</span>
+                  <div className="card-turnaround">
+                    <Clock size={13} />
+                    <span>{service.turnaround}</span>
+                  </div>
+                </div>
+
+                {/* Card Title & Icon Header */}
+                <div className="card-head">
+                  <div className="card-icon-frame">
+                    <Icon size={26} />
+                  </div>
+                  <div className="card-title-group">
+                    <h3 className="card-title">{service.title}</h3>
+                    <p className="card-tagline">{service.tagline}</p>
+                  </div>
+                </div>
+
+                {/* Tech Stack Chips upfront */}
+                <div className="tech-stack-row">
+                  {service.techStack.map((tech, tIdx) => (
+                    <span key={tIdx} className="tech-chip">{tech}</span>
+                  ))}
+                </div>
+
+                {/* Divider */}
+                <div className="card-divider" />
+
+                {/* What's Included Upfront List */}
+                <div className="features-section">
+                  <div className="section-label">Key Highlights:</div>
+                  <ul className="features-checklist">
+                    {service.highlights.map((item, fIdx) => (
+                      <li key={fIdx}>
+                        <CheckCircle2 size={16} className="check-icon" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="details-section">
-                  <h4>Our Process:</h4>
-                  <ol>
-                    {service.process.map((step, stepIndex) => (
-                      <li key={stepIndex}>{step}</li>
-                    ))}
-                  </ol>
+                {/* Deliverable Box Upfront */}
+                <div className="deliverable-card-box">
+                  <span className="deliverable-label">Package Output</span>
+                  <p className="deliverable-text">{service.deliverable}</p>
                 </div>
 
-                <div className="details-section">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    {service.deliverables.map((deliverable, deliverableIndex) => (
-                      <li key={deliverableIndex}>
-                        <Award size={16} />
-                        {deliverable}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Collapsible Process Toggle */}
+                <div className="card-accordion">
+                  <button 
+                    className={`accordion-trigger ${isProcessOpen ? 'expanded' : ''}`}
+                    onClick={() => toggleProcess(service.id)}
+                    type="button"
+                  >
+                    <span>View Development Workflow ({service.process.length} steps)</span>
+                    <ChevronDown size={16} className="chevron-icon" />
+                  </button>
+
+                  <AnimatePresence>
+                    {isProcessOpen && (
+                      <motion.div
+                        className="accordion-content"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ol className="process-mini-timeline">
+                          {service.process.map((pStep, pIdx) => (
+                            <li key={pIdx}>
+                              <span className="mini-step-num">{pIdx + 1}</span>
+                              <span className="mini-step-text">{pStep}</span>
+                            </li>
+                          ))}
+                        </ol>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Card Action Footer */}
+                <div className="card-action-bar">
+                  <button
+                    className="card-cta-btn"
+                    onClick={handleInquire}
+                  >
+                    <span>Start This Project</span>
+                    <ArrowRight size={16} />
+                  </button>
                 </div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
-      {/* Process Section */}
-      <div className="process-section">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="section-header"
-        >
-          <h2>Our Development Process</h2>
-          <p>A proven methodology that ensures quality, transparency, and successful project delivery.</p>
-        </motion.div>
+      {/* Development Process Road Section */}
+      <div className="process-showcase-section">
+        <div className="process-header">
+          <span className="process-pretitle">HOW WE EXECUTE</span>
+          <h2>Our 5-Step Rapid Delivery Method</h2>
+          <p>From initial brief to production launch with absolute precision, daily clarity, and zero stress.</p>
+        </div>
 
-        <div className="process-grid">
-          {processSteps.map((step, index) => (
-            <motion.div
-              key={index}
-              className="process-step"
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <div className="step-number">{step.step}</div>
-              <div className="step-icon">
-                <step.icon size={32} />
-              </div>
-                             <h3>{step.title}</h3>
-               <p>{step.description}</p>
-            </motion.div>
-          ))}
+        <div className="process-steps-track">
+          {processSteps.map((step, idx) => {
+            const StepIcon = step.icon;
+            return (
+              <motion.div
+                key={idx}
+                className="step-track-node"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.12 }}
+              >
+                <div className="step-node-header">
+                  <span className="step-counter-badge">{step.step}</span>
+                  <div className="step-node-icon">
+                    <StepIcon size={22} />
+                  </div>
+                </div>
+                <h4 className="step-node-title">{step.title}</h4>
+                <p className="step-node-desc">{step.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-
-      
     </section>
   );
 };

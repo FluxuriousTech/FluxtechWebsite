@@ -4,7 +4,6 @@ import Button2 from './Button2';
 import BottomPattern from '../assets/bottom_pattern.png';
 import BlurImage from '../assets/Blur.png';
 import ContactUsImage from '../assets/ContactUs.png';
-import jsPDF from 'jspdf';
 import { motion } from 'framer-motion';
 
 const ContactUs = () => {
@@ -27,111 +26,54 @@ const ContactUs = () => {
     }));
   };
 
-  const generatePDF = async (formData) => {
-    const pdf = new jsPDF();
-    
-    // Add company logo/title
-    pdf.setFontSize(20);
-    pdf.setTextColor(37, 211, 102); // WhatsApp green
-    pdf.text('FLUXURIOUS TECH', 20, 20);
-    
-    // Add form title
-    pdf.setFontSize(16);
-    pdf.setTextColor(0, 0, 0);
-    pdf.text('Contact Form Submission', 20, 40);
-    
-    // Add form data
-    pdf.setFontSize(12);
-    pdf.setTextColor(0, 0, 0);
-    
-    let yPosition = 60;
-    const lineHeight = 8;
-    
-    pdf.text(`Full Name: ${formData.name}`, 20, yPosition);
-    yPosition += lineHeight;
-    
-    pdf.text(`Email: ${formData.email}`, 20, yPosition);
-    yPosition += lineHeight;
-    
-    pdf.text(`Phone: ${formData.phone}`, 20, yPosition);
-    yPosition += lineHeight;
-    
-    pdf.text(`Company: ${formData.company}`, 20, yPosition);
-    yPosition += lineHeight;
-    
-    pdf.text(`Project Type: ${formData.projectType}`, 20, yPosition);
-    yPosition += lineHeight;
-    
-    // Handle long message text
-    const messageLines = pdf.splitTextToSize(`Project Details: ${formData.message}`, 170);
-    pdf.text(messageLines, 20, yPosition);
-    
-    // Add timestamp
-    const timestamp = new Date().toLocaleString();
-    pdf.setFontSize(10);
-    pdf.setTextColor(100, 100, 100);
-    pdf.text(`Submitted on: ${timestamp}`, 20, 280);
-    
-    return pdf;
-  };
-
   // Replace with your WhatsApp number including country code without '+' or spaces (e.g. '1234567890')
   const WHATSAPP_PHONE_NUMBER = '918591903004';
 
+  const projectTypeLabels = {
+    'web-design': 'Web Design',
+    'web-development': 'Web Development',
+    'mobile-app': 'Mobile App Development',
+    'full-stack': 'Full Stack Development',
+    'ui-ux': 'UI/UX Design',
+    'consultation': 'Consultation & Strategy',
+    'other': 'Other / Custom Project'
+  };
+
   const sendToWhatsAppDirect = (data) => {
+    const formattedProjectType = projectTypeLabels[data.projectType] || data.projectType || 'Not specified';
+    const phoneDisplay = data.phone?.trim() ? data.phone : 'Not provided';
+    const companyDisplay = data.company?.trim() ? data.company : 'Individual / Not specified';
+
     const textMessage = 
-`*New Contact Form Submission - FLUXURIOUS TECH*
+`━━━━━━━━━━━━━━━━━━━━
+*FLUXURIOUS TECH • NEW INQUIRY*
+━━━━━━━━━━━━━━━━━━━━
 
-👤 *Name:* ${data.name}
-📧 *Email:* ${data.email}
-📱 *Phone:* ${data.phone || 'N/A'}
-🏢 *Company:* ${data.company || 'N/A'}
-🎯 *Project Type:* ${data.projectType}
+• *Client Name:* ${data.name}
+• *Email:* ${data.email}
+• *Phone:* ${phoneDisplay}
+• *Company / Organization:* ${companyDisplay}
+• *Service Interested In:* ${formattedProjectType}
 
-📝 *Project Details:*
-${data.message}`;
+────────────────────
+*PROJECT BRIEF & REQUIREMENTS:*
+────────────────────
+${data.message}
+
+━━━━━━━━━━━━━━━━━━━━`;
 
     const encodedText = encodeURIComponent(textMessage);
     const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedText}`;
     window.open(whatsappUrl, '_blank');
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      // 1. Generate & download PDF for reference
-      try {
-        const pdf = await generatePDF(formData);
-        pdf.save(`contact_form_${formData.name.replace(/\s+/g, '_')}.pdf`);
-      } catch (pdfErr) {
-        console.warn('PDF generation notice:', pdfErr);
-      }
-
-      // 2. Open WhatsApp directly with form data pre-filled
+      // Open WhatsApp directly with form data pre-filled
       sendToWhatsAppDirect(formData);
-
-      // 3. Optional: Attempt to post to backend server if running
-      try {
-        const pdf = await generatePDF(formData);
-        const pdfBlob = pdf.output('blob');
-        const formDataToSend = new FormData();
-        formDataToSend.append('pdf', pdfBlob, `contact_form_${formData.name.replace(/\s+/g, '_')}_${Date.now()}.pdf`);
-        formDataToSend.append('name', formData.name);
-        formDataToSend.append('email', formData.email);
-        formDataToSend.append('phone', formData.phone);
-        formDataToSend.append('company', formData.company);
-        formDataToSend.append('projectType', formData.projectType);
-        formDataToSend.append('message', formData.message);
-        
-        fetch('http://localhost:3001/send-pdf-whatsapp', {
-          method: 'POST',
-          body: formDataToSend
-        }).catch(() => {});
-      } catch (backendErr) {
-        // Backend failure is non-blocking since WhatsApp web opens directly
-      }
       
       // Reset form fields
       setFormData({
@@ -144,7 +86,6 @@ ${data.message}`;
       });
       
       alert('Form submitted! Opening WhatsApp to send your message.');
-      
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('Error submitting form. Please check your inputs and try again.');
