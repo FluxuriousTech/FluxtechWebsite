@@ -100,6 +100,23 @@
   animation: slideInRight 1s ease-out 0.5s both;
 }
 
+.projects-lottie-container {
+  width: 100%;
+  max-width: 480px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: transparent;
+}
+
+.projects-lottie-container svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .hero-image {
   width: 100%;
   max-width: 480px;
@@ -215,6 +232,11 @@
   .hero-image {
     max-width: 400px;
   }
+
+  .projects-lottie-container {
+    max-width: 420px;
+    height: 350px;
+  }
   
   .hero-title {
     font-size: 3.5rem;
@@ -269,6 +291,12 @@
     width: 100%;
   }
 
+  .projects-lottie-container {
+    max-width: 340px;
+    height: 300px;
+    width: 100%;
+  }
+
   .hero-buttons {
     flex-direction: row;
     gap: 1rem;
@@ -284,7 +312,7 @@
   }
   
   .hero-spacer {
-    height: 80px;
+    height: 0;
   }
 
   .projects-blur-top {
@@ -302,11 +330,16 @@
   .hero-description {
     font-size: 0.9rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .hero-image {
     max-width: 450px;
+  }
+
+  .projects-lottie-container {
+    max-width: 280px;
+    height: 250px;
   }
 
   .hero-content {
@@ -319,7 +352,7 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -344,11 +377,16 @@
     max-width: 400px;
   }
 
+  .projects-lottie-container {
+    max-width: 240px;
+    height: 210px;
+  }
+
   .hero-buttons {
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
   }
 } 
