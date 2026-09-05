@@ -124,7 +124,7 @@ export default function OurServices() {
             viewport={{ amount: 0.3 }}
           >
             A seamless build process powered by performance-first code, scalable design<br />
-            systems, and clean delivery — because good tech should feel invisible.
+            systems, and clean delivery, because good tech should feel invisible.
           </motion.p>
         </div>
 

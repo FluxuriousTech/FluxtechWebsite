@@ -5,39 +5,39 @@ import BlurEffect from '../../assets/Blur.png';
 
 const timelineSteps = [
   {
-    day: 'DAY 1',
-    title: 'KICKOFF',
-    subtitle: 'Project Alignment & Roadmapping',
+    day: 'WEEK 1',
+    title: 'STRATEGY & ARCHITECTURE',
+    subtitle: 'Discovery, UX Mapping & System Design',
     description: [
-      'We begin with a focused strategy session to align on goals, define scope, and lock in timelines.',
-      'From day one, design and development move in parallel — no waiting, no fluff.'
+      'We begin with an in-depth strategy sprint to align on business objectives, architect user journeys, and lock in milestone scopes.',
+      'Wireframes and system specifications are developed in parallel, establishing a rock-solid technical foundation.'
     ]
   },
   {
-    day: 'DAY 2',
-    title: 'FOUNDATION',
-    subtitle: 'Core Systems & Architecture',
+    day: 'WEEK 2',
+    title: 'UI & CORE ENGINE',
+    subtitle: 'High-Fidelity Design & Backend Infrastructure',
     description: [
-      'Setting up the technical infrastructure and core design systems.',
-      'Building the foundational components that will power your entire product.'
+      'Crafting premium, interactive UI layouts with fluid design systems while our engineers build backend APIs and data models.',
+      'Every pixel and endpoint is vetted for performance, scalability, and responsiveness.'
     ]
   },
   {
-    day: 'DAY 3',
-    title: 'ASSEMBLY',
-    subtitle: 'Feature Integration & Testing',
+    day: 'WEEK 3',
+    title: 'FULL INTEGRATION',
+    subtitle: 'Feature Assembly, Interactive Flows & APIs',
     description: [
-      'Rapid assembly of features and functionality using our component library.',
-      'Continuous testing and optimization for peak performance.'
+      'Transforming high-fidelity mockups into dynamic, fast-loading interfaces connected to live services.',
+      'Continuous integration cycles with rigorous cross-browser and mobile device verification.'
     ]
   },
   {
-    day: 'DAY 4',
-    title: 'LAUNCH',
-    subtitle: 'Final Polish & Deployment',
+    day: 'WEEK 4',
+    title: 'POLISH & DEPLOYMENT',
+    subtitle: 'Testing, Optimization & Production Launch',
     description: [
-      'Thorough testing across devices and final performance optimization.',
-      'Deployment preparation and successful launch execution.'
+      'End-to-end QA, Lighthouse speed optimization, SEO configuration, and security checks.',
+      'Zero-downtime deployment to production, client handover, and post-launch performance monitoring.'
     ]
   }
 ];
@@ -91,14 +91,17 @@ export default function HowWeDeliver() {
       <img src={BlurEffect} alt="" className="blur-top-effect" />
       <div className="container">
         <div className="section-header">
+          <div className="section-eyebrow-pill">
+            <span>⚡</span> 4-WEEK SPRINT ROADMAP
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: -60, scale: 0.8 }}
             whileInView={{ 
               opacity: 1, 
               y: 0, 
-              scale: 1,
+              scale: 1, 
               transition: {
-                duration: 1,
+                duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }
             }}
@@ -111,7 +114,7 @@ export default function HowWeDeliver() {
             whileInView={{ 
               opacity: 1, 
               y: 0, 
-              scale: 1,
+              scale: 1, 
               transition: {
                 duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94],
@@ -120,8 +123,8 @@ export default function HowWeDeliver() {
             }}
             viewport={{ amount: 0.3 }}
           >
-            A streamlined, day-by-day build process — engineered for<br />
-            speed, clarity, and launch without lag.
+            A streamlined, 4-week end-to-end build process, engineered for<br />
+            speed, precision, and full design-to-development readiness.
           </motion.p>
         </div>
 

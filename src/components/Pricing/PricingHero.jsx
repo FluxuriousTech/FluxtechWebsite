@@ -15,7 +15,7 @@ const PricingHero = () => {
             Build Around Your Budget
         </h1>
           <p className="hero-description">
-          Clear, flexible, and tailored to your goals — no jargon, just honest value.
+          Clear, flexible, and tailored to your goals: no jargon, just honest value.
           </p>
           <div className="hero-buttons">
             <Button2 to="/contact">Start Your Project</Button2>

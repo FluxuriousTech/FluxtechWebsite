@@ -1,7 +1,7 @@
 .start7day-section {
   background-color: #0A0A1B;
-  padding: 0 0 5rem 0;
-  margin-top: -2rem;
+  padding: 0 0 3.5rem 0;
+  margin-top: -1rem;
   position: relative;
   overflow: hidden;
   color: white;
@@ -25,9 +25,9 @@
 .start7day-container {
   position: relative;
   z-index: 1;
-  max-width: 75rem;
+  max-width: 65rem;
   margin: 0 auto;
-  padding: 8rem 1.25rem 0;
+  padding: 2.5rem 1.25rem 0;
 }
 
 .start7day-content {
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 0;
   position: relative;
   transition: all 0.3s ease;
@@ -67,7 +67,7 @@
 .start7day-content:hover {
   border-color: rgba(171, 40, 250, 0.5);
   box-shadow: 0 0 1.25rem rgba(171, 40, 250, 0.4);
-  transform: translateY(-0.3125rem);
+  transform: translateY(-0.25rem);
 }
 
 .start7day-content:hover::before {
@@ -79,25 +79,28 @@
 }
 
 .start7day-image {
-  flex: 1;
-  max-width: 50%;
+  flex: 0.85;
+  max-width: 40%;
   margin: 0;
   height: 100%;
   position: relative;
   padding: 1.25rem;
   background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .start7day-image img {
   width: 100%;
-  height: 100%;
+  max-height: 14rem;
   object-fit: contain;
   border-radius: 1rem;
   display: block;
   transition: transform 0.3s ease;
   background: rgba(13, 13, 27, 0.3);
-  border: 0.125rem solid rgba(85, 81, 119, 1);
-  padding: 1.25rem;
+  border: 0.125rem solid rgba(85, 81, 119, 0.8);
+  padding: 1rem;
   position: relative;
 }
 
@@ -127,28 +130,31 @@
 }
 
 .start7day-text {
-  flex: 1;
-  max-width: 50%;
-  padding: 3rem;
+  flex: 1.15;
+  max-width: 60%;
+  padding: 2rem 2.5rem 2rem 1rem;
 }
 
 .start7day-text h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
   color: #FFFFFF;
+  letter-spacing: -0.02em;
 }
 
 .start7day-text p {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
 .start7day-text .subtitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .button-container {

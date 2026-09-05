@@ -220,8 +220,8 @@ ${data.message}
                           required
                         >
                           <option value="">Select project type</option>
-                          <option value="web-design">Web Design</option>
                           <option value="web-development">Web Development</option>
+                          <option value="web-design">Web Design</option>
                           <option value="mobile-app">Mobile App Development</option>
                           <option value="full-stack">Full Stack Development</option>
                           <option value="ui-ux">UI/UX Design</option>

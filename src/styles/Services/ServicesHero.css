@@ -126,7 +126,33 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  } 
+}
+
+/* Lottie Animation Container */
+.hero-lottie-container {
+  width: 100%;
+  max-width: 580px;
+  height: 400px;
+  min-height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.hero-lottie-container svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.services-lottie-anim {
+  width: 100%;
+  height: 100%;
+} 
 
 /* Animations */
 @keyframes slideInRight {
@@ -253,6 +279,12 @@
     width: 100%;
   }
 
+  .hero-lottie-container {
+    max-width: 500px;
+    height: 320px;
+    min-height: 280px;
+  }
+
   .hero-buttons {
     flex-direction: row;
     gap: 1rem;
@@ -285,6 +317,12 @@
 
   .hero-image {
     max-width: 450px;
+  }
+
+  .hero-lottie-container {
+    max-width: 100%;
+    height: 260px;
+    min-height: 220px;
   }
 
   .hero-content {

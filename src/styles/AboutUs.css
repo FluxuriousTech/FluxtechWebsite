@@ -2,7 +2,7 @@
 .about-container {
   min-height: 100vh;
   background: #0A0A1B;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   position: relative;
   overflow-x: hidden;
 }
@@ -60,26 +60,28 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 3rem;
+  font-weight: 700;
   color: #FFFFFF;
   margin: 0 0 1rem 0;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   animation: fadeInUp 1s ease-out 1.5s both;
 }
 
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   animation: fadeInUp 1s ease-out 2s both;
 }
 
@@ -91,9 +93,9 @@
 }
 
 .secondary-button {
-  padding: 16px 32px;
+  padding: 14px 28px;
   border-radius: 33px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -103,6 +105,7 @@
   backdrop-filter: blur(10px);
   min-width: 160px;
   text-align: center;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
 }
 
 .secondary-button:hover {
@@ -121,7 +124,7 @@
 
 .hero-image {
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
   display: flex;
   justify-content: center;
   align-items: center;

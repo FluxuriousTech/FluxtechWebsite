@@ -1,8 +1,8 @@
 .small-button {
-  padding: 0.75rem 1.5rem;
-  border-radius: 2.0625rem;
-  font-size: 1rem;
-  font-weight: 500;
+  padding: 0.45rem 1.15rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
   border: none;
   transition: all 0.3s ease;
@@ -10,7 +10,8 @@
   width: auto;
   height: auto;
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  letter-spacing: 0.3px;
   display: flex;
   align-items: center;
   justify-content: center;

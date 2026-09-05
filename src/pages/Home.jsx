@@ -16,9 +16,9 @@ const Home = () => {
       <Navbar />
       <HomeContent />
       <WhatWeBuild />
+      <OurWork />
       <WhatsUnderHood />
       <HowWeDeliver />
-      <OurWork />
       <Testimonials />
       <WhatsApp />
       <ContactUs />

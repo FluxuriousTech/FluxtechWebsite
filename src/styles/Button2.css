@@ -10,7 +10,7 @@
   min-width: 204px;
   height: 50px;
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   display: flex;
   align-items: center;
   justify-content: center;

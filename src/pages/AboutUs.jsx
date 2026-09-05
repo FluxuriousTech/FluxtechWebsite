@@ -95,7 +95,7 @@ const AboutUs = () => {
               }}
               viewport={{ amount: 0.3 }}
             >
-              — Reid Hoffman, Co-founder of LinkedIn
+              - Reid Hoffman, Co-founder of LinkedIn
             </motion.p>
           </div>
           <div className="team-image">

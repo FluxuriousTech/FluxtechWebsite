@@ -3,9 +3,13 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #0A0A1B;
-  font-family: 'Inter', sans-serif;
+  background-color: rgba(10, 10, 27, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(171, 40, 250, 0.12);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   z-index: 50;
+  transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -14,8 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
-  padding: 0 96px;
+  height: 60px;
+  padding: 0 48px;
 }
 
 .nav-logo {
@@ -25,31 +29,32 @@
 }
 
 .logo-image {
-  height: 1.75rem;
+  height: 1.4rem;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 .nav-logo:hover .logo-image {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 36px;
 }
 
 .nav-link {
   color: white;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   text-decoration: none;
   opacity: 0.8;
+  letter-spacing: 0.2px;
   transition: all 0.2s ease;
   position: relative;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
 }
 
 .nav-link::after {

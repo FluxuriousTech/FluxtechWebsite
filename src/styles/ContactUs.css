@@ -57,16 +57,18 @@
 }
 
 .contact-title {
-  font-size: 3rem;
-  font-weight: 600;
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
   color: #FFFFFF;
   margin: 0 0 1rem 0;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .contact-subtitle {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
   margin: 0;
 }
@@ -74,7 +76,7 @@
 /* Form Wrapper */
 .contact-form-wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1150px;
   display: flex;
   justify-content: center;
 }
@@ -94,7 +96,7 @@
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 2.2rem;
   backdrop-filter: blur(10px);
 }
 
@@ -102,15 +104,15 @@
 .form-content {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .form-section {
-  flex: 1;
+  flex: 1.2;
 }
 
 .form-image {
-  flex: 1;
+  flex: 0.85;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +120,7 @@
 
 .form-image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 330px;
   height: auto;
   display: block;
   transition: transform 0.3s ease;
@@ -166,8 +168,8 @@
   border-radius: 8px;
   padding: 0.875rem 1rem;
   color: #FFFFFF;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   width: 100%;

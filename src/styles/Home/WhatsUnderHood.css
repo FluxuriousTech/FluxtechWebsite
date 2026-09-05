@@ -1,6 +1,6 @@
 .whats-under-hood {
   background-color: #0A0A1B;
-  padding: 5rem 0;
+  padding: 3.5rem 0;
   color: white;
   position: relative;
   overflow: hidden;
@@ -16,7 +16,7 @@
 
 .whats-under-hood .section-header {
   text-align: center;
-  margin-bottom: 3.75rem;
+  margin-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,37 +24,39 @@
 }
 
 .whats-under-hood .section-header h2 {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
   color: #FFFFFF;
   text-align: center;
   display: block;
   width: 100%;
+  letter-spacing: -0.02em;
 }
 
 .whats-under-hood .section-header p {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
-  margin-bottom: 2rem;
-  max-width: 800px;
+  margin-bottom: 1rem;
+  max-width: 750px;
   text-align: center;
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .feature-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.5rem;
-  padding: 2rem;
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.25rem;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -66,17 +68,17 @@
 }
 
 .icon-wrapper {
-  width: 5rem;
-  height: 5rem;
+  width: 3.75rem;
+  height: 3.75rem;
   background: linear-gradient(to bottom, 
     #7C159F 0%,
     #1A0732 100%
   );
-  border-radius: 1.5rem;
+  border-radius: 1.15rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.15rem;
   position: relative;
   backdrop-filter: blur(0.5rem);
   border: 1px solid rgba(167, 127, 179, 0.4);
@@ -93,7 +95,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 1.5rem;
+  border-radius: 1.15rem;
   background: linear-gradient(to bottom,
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0.02)
@@ -103,6 +105,8 @@
 
 .feature-icon {
   color: rgba(255, 255, 255, 0.95);
+  width: 1.5rem;
+  height: 1.5rem;
   filter: drop-shadow(0 0 0.3125rem rgba(124, 21, 159, 0.5));
   transition: all 0.3s ease;
 }
@@ -125,14 +129,15 @@
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
   color: #fff;
 }
 
 .feature-card p {
-  font-size: 1rem;
+  font-size: 0.92rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;

@@ -58,14 +58,17 @@ const Testimonials = () => {
       <img src={BlurEffect} alt="" className="blur-top-effect" />
       <div className="container">
         <div className="section-header">
+          <div className="section-eyebrow-pill">
+            <span>💬</span> TRUST & FEEDBACK
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: -60, scale: 0.8 }}
             whileInView={{ 
               opacity: 1, 
               y: 0, 
-              scale: 1,
+              scale: 1, 
               transition: {
-                duration: 1,
+                duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }
             }}

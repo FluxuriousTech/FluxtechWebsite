@@ -54,29 +54,84 @@ const mobileCardVariants = {
 };
 
 const PROJECTS = {
-  'Web Design': [
-    { id: 1, reverse: false, title: 'Aarohan', subheader: 'Education for every dream', description: 'Designed a platform to uplift underserved students—accessible, inspiring, and built to break barriers.', image: AarohanImage },
-    { id: 2, reverse: true, title: 'Student Dashboard', subheader: 'One hub. Everything students need', description: 'Designed a platform to uplift underserved students—accessible, inspiring, and built to break barriers.', image: StudentDashboardImage },
-    { id: 3, reverse: false, title: 'Fashion Website', subheader: 'Style that speaks digital', description: 'Built a bold, trend-forward site where aesthetics and usability walk the runway together.', image: FashionWebDesignImage },
-  ],
   'Web Development': [
-    { id: 1, reverse: false, title: 'NetWealth India', subheader: 'Premium Website for a Modern Fintech Brand', description: 'Built a sleek, responsive platform for a finance company offering credit, loans, insurance, and investment tools' },
-    { id: 2, reverse: true, title: 'Gym Website', subheader: 'Modern, powerful, and built to move', description: 'Sleek design. Fast access. Made for members who lift, train, and hustle—and for the trainers who keep them going.', image: GymWebsiteImage },
-    { id: 3, reverse: false, title: 'BlingxBeyond', subheader: 'Timeless Fashion & Jewelry', description: 'Designed a stunning e-commerce platform for premium jewelry and fashion accessories—where elegant design meets seamless shopping experience.', image: LuxuryVacationsImage },
-    { id: 4, reverse: true, title: 'Bayside Sports Redesign', subheader: 'Scalable Online Store', description: 'Revamped the site for speed, clarity, and energy—so fans and players connect with the action in seconds.', image: BaysideSportsImage },
+    { 
+      id: 1, 
+      reverse: false, 
+      title: 'NetWealth India', 
+      subheader: 'Premium Website for a Modern Fintech Brand', 
+      description: 'Built a sleek, responsive platform for a finance company offering credit, loans, insurance, and investment tools',
+      image: NetwealthIndiaImage,
+      videoUrl: 'https://player.vimeo.com/video/1107824461?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+    { 
+      id: 2, 
+      reverse: true, 
+      title: 'Gym Website', 
+      subheader: 'Modern, powerful, and built to move', 
+      description: 'Sleek design. Fast access. Made for members who lift, train, and hustle, and for the trainers who keep them going.', 
+      image: GymWebsiteImage,
+      videoUrl: 'https://player.vimeo.com/video/1107824414?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+    { 
+      id: 3, 
+      reverse: false, 
+      title: 'BlingxBeyond', 
+      subheader: 'Timeless Fashion & Jewelry', 
+      description: 'Designed a stunning e-commerce platform for premium jewelry and fashion accessories, where elegant design meets seamless shopping experience.', 
+      image: LuxuryVacationsImage,
+      videoUrl: 'https://player.vimeo.com/video/1107823130?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+    { 
+      id: 4, 
+      reverse: true, 
+      title: 'Bayside Sports Redesign', 
+      subheader: 'Scalable Online Store', 
+      description: 'Revamped the site for speed, clarity, and energy so fans and players connect with the action in seconds.', 
+      image: BaysideSportsImage,
+      videoUrl: 'https://player.vimeo.com/video/1107824369?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+  ],
+  'Web Design': [
+    { 
+      id: 1, 
+      reverse: false, 
+      title: 'Aarohan', 
+      subheader: 'Education for every dream', 
+      description: 'Designed a platform to uplift underserved students: accessible, inspiring, and built to break barriers.', 
+      image: AarohanImage,
+      videoUrl: 'https://player.vimeo.com/video/1107823493?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+    { 
+      id: 2, 
+      reverse: true, 
+      title: 'Student Dashboard', 
+      subheader: 'One hub. Everything students need', 
+      description: 'Designed a platform to uplift underserved students: accessible, inspiring, and built to break barriers.', 
+      image: StudentDashboardImage,
+      videoUrl: 'https://player.vimeo.com/video/1107824205?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
   ],
   'App Development': [
     { id: 1, reverse: false, title: 'Stylish', subheader: 'Fashion & Shopping', description: 'A modern clothing shopping app with seamless user experience.', image: Mob1Image },
     { id: 2, reverse: true, title: 'Music App', subheader: 'Entertainment', description: 'Stream and discover music with a beautiful interface.', image: Mob3Image }
   ],
   'Backend Systems': [
-    { id: 1, reverse: false, title: 'DreamStack', subheader: 'AI-Powered Website Builder', description: 'Built a revolutionary platform that creates stunning websites with AI in minutes. Features bulk import functionality and automated project management.', image: DreamStackImage },
+    { 
+      id: 1, 
+      reverse: false, 
+      title: 'DreamStack', 
+      subheader: 'AI-Powered Website Builder', 
+      description: 'Built a revolutionary platform that creates stunning websites with AI in minutes. Features bulk import functionality and automated project management.', 
+      image: DreamStackImage,
+      videoUrl: 'https://player.vimeo.com/video/1107824283?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
     { id: 2, reverse: true, title: 'Database Management', subheader: 'High-Performance Data Solutions', description: 'Designed and implemented database systems with optimization, backup strategies, and real-time synchronization.', image: ProjectImage },
     { id: 3, reverse: false, title: 'Cloud Infrastructure', subheader: 'AWS/Azure Deployment', description: 'Set up scalable cloud infrastructure with load balancing, auto-scaling, and monitoring systems.', image: ProjectImage },
   ],
 };
 
-const FILTERS = ['Web Design', 'Web Development', 'App Development', 'Backend Systems'];
+const FILTERS = ['Web Development', 'Web Design', 'App Development', 'Backend Systems'];
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = React.useState(() => window.innerWidth < breakpoint);
@@ -98,7 +153,7 @@ function useIsVerySmallScreen(breakpoint = 490) {
   return isVerySmall;
 }
 
-const ProjectCard = ({ reverse, index, title, subheader, description, image, isMobile, isVerySmallScreen }) => {
+const ProjectCard = ({ reverse, index, title, subheader, description, image, videoUrl, isMobile, isVerySmallScreen }) => {
   const [hover, setHover] = React.useState(false);
   const isFirstWebDev = title === 'NetWealth India';
   const isSecondWebDev = title === 'Gym Website';
@@ -114,17 +169,17 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
   // For mobile, always image first, then text, but keep desktop sizing
   const cardContent = isMobile ? (
     <>
-      {/* Image Card */}
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 40, padding: isVerySmallScreen ? '0 12px' : '0 24px' }}>
+      {/* Image / Video Card */}
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 24, padding: isVerySmallScreen ? '0 12px' : '0 24px' }}>
         <div
           style={{
             position: 'relative',
             width: isFirstAppDev || isSecondAppDev ? 
               (isVerySmallScreen ? 240 : window.innerWidth <= 600 ? 280 : 300) : 
-              (isVerySmallScreen ? 320 : window.innerWidth <= 600 ? 400 : 540),
+              (isVerySmallScreen ? 320 : window.innerWidth <= 600 ? 400 : 520),
             height: isFirstAppDev || isSecondAppDev ? 
-              (isVerySmallScreen ? 480 : window.innerWidth <= 600 ? 560 : 600) : 
-              (isVerySmallScreen ? 240 : window.innerWidth <= 600 ? 280 : 360),
+              (isVerySmallScreen ? 460 : window.innerWidth <= 600 ? 520 : 560) : 
+              (isVerySmallScreen ? 220 : window.innerWidth <= 600 ? 260 : 320),
             borderRadius: isFirstAppDev || isSecondAppDev ? '2.5rem' : '1rem',
             border: `2px solid ${hover ? borderHover : borderColor}`,
             background: '#18182a',
@@ -142,10 +197,10 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
             style={{
               width: isFirstAppDev || isSecondAppDev ? 
                 (isVerySmallScreen ? 210 : window.innerWidth <= 600 ? 250 : 270) : 
-                (isVerySmallScreen ? 280 : window.innerWidth <= 600 ? 360 : 500),
+                (isVerySmallScreen ? 280 : window.innerWidth <= 600 ? 360 : 480),
               height: isFirstAppDev || isSecondAppDev ? 
-                (isVerySmallScreen ? 420 : window.innerWidth <= 600 ? 500 : 540) : 
-                (isVerySmallScreen ? 200 : window.innerWidth <= 600 ? 240 : 320),
+                (isVerySmallScreen ? 400 : window.innerWidth <= 600 ? 460 : 500) : 
+                (isVerySmallScreen ? 180 : window.innerWidth <= 600 ? 220 : 280),
               borderRadius: isFirstAppDev || isSecondAppDev ? '2rem' : '0.7rem',
               border: `2px solid ${hover ? borderHover : borderColor}`,
               background: innerBg,
@@ -173,10 +228,10 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
       <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: isVerySmallScreen ? '0 12px' : '0 16px' }}>
         <div style={{ 
           fontWeight: 700, 
-          fontSize: isVerySmallScreen ? '2rem' : window.innerWidth <= 600 ? '2.4rem' : '2.8rem', 
+          fontSize: isVerySmallScreen ? '1.8rem' : window.innerWidth <= 600 ? '2.1rem' : '2.4rem', 
           color: '#fff', 
-          marginBottom: 16, 
-          lineHeight: 1.1, 
+          marginBottom: 12, 
+          lineHeight: 1.15, 
           textAlign: 'center' 
         }}>
           {title}
@@ -184,15 +239,15 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
         <div style={{ 
           color: '#bdbdbd', 
           fontWeight: 700, 
-          fontSize: isVerySmallScreen ? '0.9rem' : window.innerWidth <= 600 ? '1.1rem' : '1.25rem', 
-          marginBottom: 16, 
+          fontSize: isVerySmallScreen ? '0.9rem' : window.innerWidth <= 600 ? '1rem' : '1.15rem', 
+          marginBottom: 12, 
           textAlign: 'center', 
           fontStyle: 'italic' 
         }}>{subheader}</div>
         <div style={{ 
           color: '#e0e0e0', 
-          fontSize: isVerySmallScreen ? '0.9rem' : window.innerWidth <= 600 ? '1rem' : '1.15rem', 
-          marginBottom: 60, 
+          fontSize: isVerySmallScreen ? '0.9rem' : window.innerWidth <= 600 ? '0.95rem' : '1.05rem', 
+          marginBottom: 28, 
           lineHeight: 1.6, 
           textAlign: 'center' 
         }}>
@@ -247,11 +302,11 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
     <>
       {/* Left: Info */}
       <div style={{ flex: 1, maxWidth: 520, textAlign: 'left' }}>
-        <div style={{ fontWeight: 700, fontSize: '2.8rem', color: '#fff', marginBottom: 12, lineHeight: 1.1 }}>
+        <div style={{ fontWeight: 700, fontSize: '2.4rem', color: '#fff', marginBottom: 10, lineHeight: 1.15 }}>
           {title}
         </div>
-        <div style={{ color: '#bdbdbd', fontWeight: 700, fontSize: '1.25rem', marginBottom: 12, fontStyle: 'italic' }}>{subheader}</div>
-        <div style={{ color: '#e0e0e0', fontSize: '1.15rem', marginBottom: 40, lineHeight: 1.6 }}>
+        <div style={{ color: '#bdbdbd', fontWeight: 700, fontSize: '1.15rem', marginBottom: 10, fontStyle: 'italic' }}>{subheader}</div>
+        <div style={{ color: '#e0e0e0', fontSize: '1.05rem', marginBottom: 24, lineHeight: 1.6 }}>
           {description}
         </div>
         {isFirstAppDev ? (
@@ -303,8 +358,8 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
         <div
           style={{
             position: 'relative',
-            width: isFirstAppDev || isSecondAppDev ? 300 : (window.innerWidth <= 600 ? 300 : 540),
-            height: isFirstAppDev || isSecondAppDev ? 600 : (window.innerWidth <= 600 ? 400 : 360),
+            width: isFirstAppDev || isSecondAppDev ? 280 : (window.innerWidth <= 600 ? 280 : 500),
+            height: isFirstAppDev || isSecondAppDev ? 540 : (window.innerWidth <= 600 ? 360 : 320),
             borderRadius: isFirstAppDev || isSecondAppDev ? (window.innerWidth <= 768 ? '2.5rem' : '2.5rem') : '1rem',
             border: `2px solid ${hover ? borderHover : borderColor}`,
             background: '#18182a',
@@ -320,8 +375,8 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
         >
           <div
             style={{
-              width: isFirstAppDev || isSecondAppDev ? 270 : (window.innerWidth <= 600 ? 270 : 500),
-              height: isFirstAppDev || isSecondAppDev ? 540 : (window.innerWidth <= 600 ? 360 : 320),
+              width: isFirstAppDev || isSecondAppDev ? 250 : (window.innerWidth <= 600 ? 250 : 460),
+              height: isFirstAppDev || isSecondAppDev ? 490 : (window.innerWidth <= 600 ? 320 : 280),
               borderRadius: isFirstAppDev || isSecondAppDev ? (window.innerWidth <= 768 ? '2rem' : '2rem') : '0.7rem',
               border: `2px solid ${hover ? borderHover : borderColor}`,
               background: innerBg,
@@ -355,11 +410,11 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, isM
         justifyContent: 'center',
         alignItems: 'center',
         maxWidth: 1200,
-        margin: isMobile ? '60px auto' : '80px auto',
+        margin: isMobile ? '32px auto' : '44px auto',
         background: 'none',
         borderRadius: 32,
-        padding: isMobile ? '24px 0' : '32px 0',
-        gap: isMobile ? 16 : 48,
+        padding: isMobile ? '16px 0' : '20px 0',
+        gap: isMobile ? 16 : 36,
         perspective: isMobile ? 'none' : 1200,
         width: '100%',
       }}
@@ -408,8 +463,8 @@ const ProjectsContent = () => {
           flexDirection: isVerySmallScreen ? 'row' : 'column',
           alignItems: 'center',
           width: '100%',
-          marginTop: 60,
-          marginBottom: 50,
+          marginTop: 20,
+          marginBottom: 24,
           zIndex: 1,
           gap: isVerySmallScreen ? '0.25rem' : '0.5rem',
           flexWrap: isVerySmallScreen ? 'wrap' : 'nowrap',
@@ -529,9 +584,9 @@ const ProjectsContent = () => {
         <div style={{
           display: 'flex',
           justifyContent: 'center',
-          gap: '1.5rem',
-          marginTop: 100,
-          marginBottom: 80,
+          gap: '1.25rem',
+          marginTop: 20,
+          marginBottom: 36,
           zIndex: 1,
           flexWrap: 'nowrap',
           width: 'auto',
@@ -567,6 +622,7 @@ const ProjectsContent = () => {
           subheader={proj.subheader}
           description={proj.description}
           image={proj.image}
+          videoUrl={proj.videoUrl}
           isMobile={isMobile}
           isVerySmallScreen={isVerySmallScreen}
         />

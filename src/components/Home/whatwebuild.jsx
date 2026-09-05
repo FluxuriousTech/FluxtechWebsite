@@ -65,14 +65,17 @@ export default function WhatWeBuild() {
       <img src={BlurEffect} alt="" className="blur-top-effect" />
       <div className="container">
         <div className="section-header">
+          <div className="section-eyebrow-pill">
+            <span>✨</span> CORE OFFERINGS
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: -60, scale: 0.8 }}
             whileInView={{ 
               opacity: 1, 
               y: 0, 
-              scale: 1,
+              scale: 1, 
               transition: {
-                duration: 1,
+                duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }
             }}
@@ -95,7 +98,7 @@ export default function WhatWeBuild() {
             viewport={{ amount: 0.3 }}
           >
             High-performance websites, sleek mobile apps, and powerful<br />
-            backend systems — all delivered in just one week.
+            backend systems, all delivered with precision.
           </motion.p>
         </div>
 
@@ -122,7 +125,7 @@ export default function WhatWeBuild() {
                   <div className="card-footer">
                   </div>
                 </div>
-                <h3 className="card-title">{title}</h3>
+                <h3 className="wwb-card-title">{title}</h3>
               </div>
             </motion.div>
           ))}

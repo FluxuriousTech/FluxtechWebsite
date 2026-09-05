@@ -19,7 +19,7 @@ const innerBg = 'rgba(13,13,27,0.3)';
 const project = {
   title: 'Bayside Sports Redesign',
   subheader: 'Scalable Online Store',
-  description: 'Revamped the site for speed, clarity, and energy—so fans and players connect with the action in seconds.'
+  description: 'Revamped the site for speed, clarity, and energy, so fans and players connect with the action in seconds.'
 };
 
 const cardVariants = {
@@ -70,7 +70,7 @@ const WebDev4 = () => {
     <div style={{ minHeight: '100vh', background: '#0A0A1B', display: 'flex', flexDirection: 'column', padding: isMobile ? (isVerySmallScreen ? '0 12px' : '0 16px') : 0 }}>
       <Navbar />
       {/* Back Button */}
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: '24px 0 0 48px', zIndex: 2 }}>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: isMobile ? (isVerySmallScreen ? '76px 16px 0' : '80px 24px 0') : '84px 0 0 48px', zIndex: 2 }}>
         <Button2 onClick={() => navigate('/projects?section=webdev')} style={{ width: 'fit-content', minWidth: '40px' }}>{'< Back to Web Development Projects'}</Button2>
       </div>
       {/* Blur effect at the top */}
@@ -101,9 +101,22 @@ const WebDev4 = () => {
           >
             <div
               className="webdev1-image-inner"
-              style={{ borderColor: hover ? borderHover : borderColor, boxShadow: hover ? '0 0 20px 0 rgba(171,40,250,0.4)' : 'none', background: innerBg }}
+              style={{ borderColor: hover ? borderHover : borderColor, boxShadow: hover ? '0 0 20px 0 rgba(171,40,250,0.4)' : 'none', background: innerBg, overflow: 'hidden' }}
             >
-              <img src={BaysideSportsImage} alt="Project Screenshot" className="webdev1-main-img" />
+              <iframe 
+                src="https://player.vimeo.com/video/1107824369?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;controls=1&amp;title=0&amp;byline=0&amp;portrait=0" 
+                frameBorder="0" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '0.7rem',
+                  border: 'none',
+                  display: 'block'
+                }} 
+                title="Bayside Sports Video Walkthrough"
+              />
             </div>
           </div>
         </motion.div>
@@ -138,7 +151,7 @@ const WebDev4 = () => {
           letterSpacing: '-1px',
           padding: '0 24px',
         }}>
-          We don't just build websites — we craft digital experiences.
+          We don't just build websites, we craft digital experiences.
         </div>
         <div style={{
           color: '#bdbdbd',
@@ -148,7 +161,7 @@ const WebDev4 = () => {
           margin: '0 auto 40px auto',
           padding: '0 24px',
         }}>
-          A modern web solution tailored to your vision — responsive, scalable, and designed to elevate user experience across every screen.
+          A modern web solution tailored to your vision: responsive, scalable, and designed to elevate user experience across every screen.
         </div>
         <img src={MockupBaysideSport} alt="Bayside Sports Responsive Mockup" style={{
           width: '90vw',
@@ -161,120 +174,6 @@ const WebDev4 = () => {
       </motion.div>
       {/* END HERO SECTION */}
       {/* Walkthrough Section */}
-      <motion.div 
-        className="webdev1-walkthrough-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
-        custom={4}
-        variants={cardVariants}
-        style={{ perspective: '1000px' }}
-      >
-        {/* Decorative Blur at the top of the section */}
-        <img src={BlurImage} alt="Blur" style={{
-          position: 'absolute',
-          top: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '60vw',
-          maxWidth: 900,
-          minWidth: 180,
-          opacity: 0.7,
-          filter: 'blur(2px)',
-          zIndex: 0,
-          pointerEvents: 'none',
-        }} />
-        <div style={{
-          color: '#fff',
-          fontWeight: 700,
-          fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-          textAlign: 'center',
-          marginBottom: 12,
-          letterSpacing: '-1px',
-          zIndex: 1,
-        }}>
-          Watch the Full Walkthrough
-        </div>
-        <div style={{
-          color: '#bdbdbd',
-          fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
-          textAlign: 'center',
-          maxWidth: 700,
-          margin: '0 auto 40px auto',
-          zIndex: 1,
-        }}>
-          A quick video tour of our platform — explore features, design, and functionality in under 2 minutes.
-        </div>
-        <div
-          style={{
-            position: 'relative',
-            width: isMobile ? 'clamp(85vw, 300px, 400px)' : 'clamp(75vw, 350px, 350px)',
-            maxWidth: isMobile ? '85vw' : '75vw',
-            height: isMobile ? 'clamp(180px, 40vw, 350px)' : 'clamp(200px, 35vw, 400px)',
-            borderRadius: '1rem',
-            border: `2px solid ${hover ? borderHover : borderColor}`,
-            background: '#18182a',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: 0,
-            transition: 'border-color 0.3s, box-shadow 0.3s',
-            boxShadow: hover ? '0 0 20px 0 rgba(171,40,250,0.4)' : 'none',
-            margin: '0 auto',
-          }}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-        >
-          <div
-            style={{
-              width: isMobile ? 'clamp(80vw, 280px, 380px)' : 'clamp(70vw, 310px, 310px)',
-              maxWidth: isMobile ? '80vw' : '70vw',
-              height: isMobile ? 'clamp(160px, 35vw, 330px)' : 'clamp(150px, 30vw, 360px)',
-              borderRadius: '0.7rem',
-              border: `2px solid ${hover ? borderHover : borderColor}`,
-              background: innerBg,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: 0,
-              transition: 'border-color 0.3s, box-shadow 0.3s',
-              boxShadow: hover ? '0 0 20px 0 rgba(171,40,250,0.4)' : 'none',
-            }}
-          >
-            <div style={{
-              width: '100%',
-              height: '100%',
-              borderRadius: '0.7rem',
-              overflow: 'hidden',
-              background: '#000',
-              position: 'relative'
-            }}>
-              <div style={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <iframe 
-                  src="https://player.vimeo.com/video/1107824369?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;controls=1&amp;title=0&amp;byline=0&amp;portrait=0" 
-                  frameBorder="0" 
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '0.7rem',
-                    border: 'none'
-                  }} 
-                  title="Video_Bayside"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
       <Footer />
     </div>
   );

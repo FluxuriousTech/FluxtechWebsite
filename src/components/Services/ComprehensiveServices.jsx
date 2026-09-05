@@ -313,7 +313,7 @@ const ComprehensiveServices = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="section-subtitle"
         >
-          All deliverables, tech stacks, and features clearly defined upfront — no guesswork, no bloated timelines.
+          All deliverables, tech stacks, and features clearly defined upfront: no guesswork, no bloated timelines.
         </motion.p>
       </div>
 
@@ -374,69 +374,72 @@ const ComprehensiveServices = () => {
             return (
               <motion.div
                 key={service.id}
-                className="service-card-modern"
+                className="svc-card"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
                 {/* Top Row: Category badge + Turnaround Pill */}
-                <div className="card-top-bar">
-                  <span className="card-badge">{service.badge}</span>
-                  <div className="card-turnaround">
+                <div className="svc-card-top">
+                  <span className="svc-badge">{service.badge}</span>
+                  <div className="svc-turnaround">
                     <Clock size={13} />
                     <span>{service.turnaround}</span>
                   </div>
                 </div>
 
                 {/* Card Title & Icon Header */}
-                <div className="card-head">
-                  <div className="card-icon-frame">
-                    <Icon size={26} />
+                <div className="svc-head">
+                  <div className="svc-icon-box">
+                    <Icon size={24} />
                   </div>
-                  <div className="card-title-group">
-                    <h3 className="card-title">{service.title}</h3>
-                    <p className="card-tagline">{service.tagline}</p>
+                  <div className="svc-title-group">
+                    <h3 className="svc-title">{service.title}</h3>
+                    <p className="svc-tagline">{service.tagline}</p>
                   </div>
                 </div>
 
-                {/* Tech Stack Chips upfront */}
-                <div className="tech-stack-row">
+                {/* Tech Stack Chips */}
+                <div className="svc-tech-row">
                   {service.techStack.map((tech, tIdx) => (
-                    <span key={tIdx} className="tech-chip">{tech}</span>
+                    <span key={tIdx} className="svc-tech-chip">{tech}</span>
                   ))}
                 </div>
 
                 {/* Divider */}
-                <div className="card-divider" />
+                <div className="svc-divider" />
 
-                {/* What's Included Upfront List */}
-                <div className="features-section">
-                  <div className="section-label">Key Highlights:</div>
-                  <ul className="features-checklist">
+                {/* Key Highlights List */}
+                <div className="svc-highlights-section">
+                  <div className="svc-highlights-label">Key Highlights</div>
+                  <ul className="svc-highlights-list">
                     {service.highlights.map((item, fIdx) => (
-                      <li key={fIdx}>
-                        <CheckCircle2 size={16} className="check-icon" />
+                      <li key={fIdx} className="svc-highlight-item">
+                        <CheckCircle2 size={16} className="svc-check-icon" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Deliverable Box Upfront */}
-                <div className="deliverable-card-box">
-                  <span className="deliverable-label">Package Output</span>
-                  <p className="deliverable-text">{service.deliverable}</p>
+                {/* Deliverable Box */}
+                <div className="svc-deliverable-box">
+                  <span className="svc-deliverable-label">
+                    <Layers size={13} />
+                    Package Output
+                  </span>
+                  <p className="svc-deliverable-text">{service.deliverable}</p>
                 </div>
 
                 {/* Collapsible Process Toggle */}
-                <div className="card-accordion">
+                <div className="svc-accordion">
                   <button 
-                    className={`accordion-trigger ${isProcessOpen ? 'expanded' : ''}`}
+                    className={`svc-accordion-trigger ${isProcessOpen ? 'expanded' : ''}`}
                     onClick={() => toggleProcess(service.id)}
                     type="button"
                   >
-                    <span>View Development Workflow ({service.process.length} steps)</span>
+                    <span>View Sprint Workflow ({service.process.length} steps)</span>
                     <ChevronDown size={16} className="chevron-icon" />
                   </button>
 
@@ -463,9 +466,9 @@ const ComprehensiveServices = () => {
                 </div>
 
                 {/* Card Action Footer */}
-                <div className="card-action-bar">
+                <div className="svc-action-bar">
                   <button
-                    className="card-cta-btn"
+                    className="svc-cta-btn"
                     onClick={handleInquire}
                   >
                     <span>Start This Project</span>

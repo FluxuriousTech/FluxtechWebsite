@@ -47,18 +47,11 @@ const OurWork = () => {
       url: "/projects/webdesign/1"
     },
     {
-      title: "Fashion Web Design",
-      categories: ["Web Design", "Fashion", "E-commerce"],
-      image: FashionWebDesign,
-      description: "Stylish fashion e-commerce website with stunning visual design",
-      url: "/projects/webdesign/2"
-    },
-    {
       title: "Student Dashboard",
       categories: ["Web Design", "Education", "Dashboard"],
       image: StudentDashboard,
       description: "Comprehensive student dashboard with modern design and analytics",
-      url: "/projects/webdesign/3"
+      url: "/projects/webdesign/2"
     }
   ];
 
@@ -202,20 +195,23 @@ const OurWork = () => {
       <img src={BlurEffect} alt="" className="blur-top-effect" />
       <div className="container">
         <div className="section-header">
+          <div className="section-eyebrow-pill">
+            <span>🚀</span> PROVEN EXECUTION
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: -60, scale: 0.8 }}
             whileInView={{ 
               opacity: 1, 
               y: 0, 
-              scale: 1,
+              scale: 1, 
               transition: {
-                duration: 1,
+                duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }
             }}
             viewport={{ amount: 0.3 }}
           >
-            Our Recent Work
+            Featured Projects
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -40, scale: 0.9 }}

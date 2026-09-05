@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../../styles/Services/ServicesHero.css';
 import Button2 from '../Button2';
 import BlurImage from '../../assets/Blur.png';
-import servicesImage from '../../assets/Services_page2.png';
+import lottie from 'lottie-web';
+import rocketAnimation from '../../assets/lottie_animations/rocket.json';
 
 const ServicesHero = () => {
+  const animContainer = useRef(null);
+
+  useEffect(() => {
+    if (!animContainer.current) return;
+
+    animContainer.current.innerHTML = '';
+
+    const animInstance = lottie.loadAnimation({
+      container: animContainer.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: rocketAnimation,
+    });
+
+    return () => {
+      animInstance.destroy();
+    };
+  }, []);
+
   return (
     <section className="services-hero">
       <img src={BlurImage} alt="Blur" className="services-blur-top" />
@@ -14,7 +35,7 @@ const ServicesHero = () => {
             Everything You Need to Launch
           </h1>
           <p className="hero-description">
-          From design to deployment, our services are built to bring your ideas to life — with clarity and care.
+          From design to deployment, our services are built to bring your ideas to life with clarity and care.
           </p>
           <div className="hero-buttons">
             <Button2 to="/contact">Start Your Project</Button2>
@@ -22,9 +43,7 @@ const ServicesHero = () => {
           </div>
         </div>
         <div className="hero-visual">
-          <div className="hero-image">
-            <img src={servicesImage} alt="Our Services" />
-          </div>
+          <div className="hero-lottie-container" ref={animContainer}></div>
         </div>
       </div>
     </section>

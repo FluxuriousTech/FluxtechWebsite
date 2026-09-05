@@ -65,14 +65,17 @@ export default function WhatsUnderHood() {
           viewport={{ amount: 0.3 }}
         >
         <div className="section-header">
+          <div className="section-eyebrow-pill">
+            <span>⚙️</span> TECH STACK & CAPABILITIES
+          </div>
           <motion.h2
             initial={{ opacity: 0, y: -60, scale: 0.8 }}
             whileInView={{ 
               opacity: 1, 
               y: 0, 
-              scale: 1,
+              scale: 1, 
               transition: {
-                duration: 1,
+                duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94]
               }
             }}
@@ -95,7 +98,7 @@ export default function WhatsUnderHood() {
             viewport={{ amount: 0.1 }}
           >
             A seamless build process powered by performance-first code, scalable design<br />
-            systems, and clean delivery — because good tech should feel invisible.
+            systems, and clean delivery, because good tech should feel invisible.
           </motion.p>
         </div>
 

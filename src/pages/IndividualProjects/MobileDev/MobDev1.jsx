@@ -122,10 +122,10 @@ const MobDev1 = () => {
         <div className="mobdev-mockup-content">
           <div className="mobdev-mockup-text">
             <h2 className="mobdev-mockup-title">
-              We don't just build apps — we craft digital experiences.
+              We don't just build apps, we craft digital experiences.
             </h2>
             <p className="mobdev-mockup-description">
-              A modern mobile solution tailored to your vision — responsive, scalable, and designed to elevate user experience across every device.
+              A modern mobile solution tailored to your vision: responsive, scalable, and designed to elevate user experience across every device.
             </p>
           </div>
           

@@ -1,10 +1,10 @@
 /* Projects Hero Section - Matching About Us Hero Style */
 .projects-hero {
-  min-height: 100vh;
+  min-height: 55vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 2rem 2rem;
+  padding: 100px 2rem 1.5rem;
   position: relative;
   z-index: 2;
 }
@@ -28,7 +28,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3.5rem;
 }
 
 .hero-text {
@@ -38,11 +38,13 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
   color: #FFFFFF;
   margin: 0 0 1rem 0;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .hero-title .line-1 {
@@ -63,23 +65,23 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1rem;
-  font-weight: 500;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
   animation: fadeInUp 1s ease-out 1.5s both;
 }
 
 .hero-description {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
-  margin-bottom: 8rem;
+  margin-bottom: 1.75rem;
   animation: fadeInUp 1s ease-out 1.5s both;
 }
 
 .hero-spacer {
-  height: 40px;
+  height: 0;
 }
 
 .hero-buttons {
@@ -87,7 +89,7 @@
   gap: 1rem;
   align-items: center;
   animation: fadeInUp 1s ease-out 2s both;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .hero-visual {
@@ -100,7 +102,7 @@
 
 .hero-image {
   width: 100%;
-  max-width: 600px;
+  max-width: 480px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -221,11 +223,12 @@
 
 @media (max-width: 768px) {
   .projects-hero {
-    padding: 80px 1rem 2rem;
+    min-height: auto;
+    padding: 70px 1rem 1.5rem;
   }
   
   .hero-spacer {
-    height: 60px;
+    height: 0;
   }
 
   .projects-blur-top {
@@ -236,14 +239,14 @@
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     text-align: center;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-content {
@@ -262,7 +265,7 @@
   }
 
   .hero-image {
-    max-width: 500px;
+    max-width: 380px;
     width: 100%;
   }
 
@@ -271,7 +274,7 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 }
 

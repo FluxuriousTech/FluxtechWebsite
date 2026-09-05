@@ -71,7 +71,7 @@ const Design3 = () => {
     <div style={{ minHeight: '100vh', background: '#0A0A1B', display: 'flex', flexDirection: 'column', padding: isMobile ? (isVerySmallScreen ? '0 12px' : '0 16px') : 0 }}>
       <Navbar />
       {/* Back Button */}
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: '24px 0 0 48px', zIndex: 2 }}>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: isMobile ? (isVerySmallScreen ? '76px 16px 0' : '80px 24px 0') : '84px 0 0 48px', zIndex: 2 }}>
         <Button2 onClick={() => navigate('/projects?section=webdesign')} style={{ width: 'fit-content', minWidth: '40px' }}>{'< Back to Web Design Projects'}</Button2>
       </div>
       {/* Blur effect at the top */}
@@ -105,7 +105,6 @@ const Design3 = () => {
             <div className="design-description">
               {project.description}
             </div>
-            <Button2 onClick={() => alert('View Project clicked!')}>View Project</Button2>
           </motion.div>
           {/* Right: Image Card */}
           <motion.div 
@@ -155,7 +154,7 @@ const Design3 = () => {
           letterSpacing: '-1px',
           padding: '0 24px',
         }}>
-          We don't just build websites — we craft digital experiences.
+          We don't just build websites, we craft digital experiences.
         </div>
         <div style={{
           color: '#bdbdbd',
@@ -165,7 +164,7 @@ const Design3 = () => {
           margin: '0 auto 40px auto',
           padding: '0 24px',
         }}>
-          A modern web solution tailored to your vision — responsive, scalable, and designed to elevate user experience across every screen.
+          A modern web solution tailored to your vision: responsive, scalable, and designed to elevate user experience across every screen.
         </div>
         <img src={MockupFashionWebDesign} alt="Fashion Website Responsive Mockup" style={{
           width: '90vw',
@@ -231,7 +230,7 @@ const Design3 = () => {
           zIndex: 1,
           padding: '0 24px',
         }}>
-          A quick video tour of our platform — explore features, design, and functionality in under 2 minutes.
+          A quick video tour of our platform: explore features, design, and functionality in under 2 minutes.
         </div>
         <div
           style={{

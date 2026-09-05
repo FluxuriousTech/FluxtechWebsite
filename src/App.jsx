@@ -16,6 +16,7 @@ import Design3 from './pages/IndividualProjects/WebDesign/Design3';
 import MobDev1 from './pages/IndividualProjects/MobileDev/MobDev1';
 import MobDev2 from './pages/IndividualProjects/MobileDev/MobDev2';
 import Backend1 from './pages/IndividualProjects/BackendSystems/Backend1';
+import FluxBot from './components/FluxBot/FluxBot';
 import './styles/global.css';
 
 // ScrollToTop component to scroll to top on route change
@@ -51,6 +52,7 @@ function App() {
         <Route path="/projects/appdev/2" element={<MobDev2 />} />
         <Route path="/projects/backendsystems/1" element={<Backend1 />} />
       </Routes>
+      <FluxBot />
     </Router>
   );
 }

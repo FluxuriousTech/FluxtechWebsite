@@ -53,12 +53,13 @@
 }
 
 .section-title {
+  font-family: var(--font-heading, 'Syne', sans-serif);
   font-size: clamp(2.2rem, 4.5vw, 3.4rem);
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 1.25rem 0;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
 }
 
 .gradient-text {
@@ -208,38 +209,42 @@
 }
 
 /* Modern Card */
-.service-card-modern {
-  background: rgba(18, 16, 38, 0.55);
-  border: 1px solid rgba(85, 81, 119, 0.5);
+.svc-card {
+  background: rgba(18, 16, 38, 0.6);
+  border: 1px solid rgba(85, 81, 119, 0.45);
   border-radius: 1.5rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   position: relative;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(14px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: left;
 }
 
-.service-card-modern:hover {
+.svc-card:hover {
   border-color: rgba(171, 40, 250, 0.65);
   box-shadow: 0 12px 40px rgba(171, 40, 250, 0.25), inset 0 0 20px rgba(171, 40, 250, 0.05);
   transform: translateY(-6px);
 }
 
 /* Card Top Bar */
-.card-top-bar {
+.svc-card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.25rem;
 }
 
-.card-badge {
-  font-size: 0.75rem;
+.svc-badge {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.08em;
   color: #d896ff;
   background: rgba(171, 40, 250, 0.15);
   border: 1px solid rgba(171, 40, 250, 0.3);
@@ -247,10 +252,11 @@
   border-radius: 2rem;
 }
 
-.card-turnaround {
+.svc-turnaround {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.8rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
@@ -261,17 +267,19 @@
 }
 
 /* Card Head */
-.card-head {
+.svc-head {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.1rem;
   margin-bottom: 1.25rem;
+  text-align: left;
 }
 
-.card-icon-frame {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+.svc-icon-box {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 12px;
   background: linear-gradient(135deg, #ab28fa 0%, #7C159F 100%);
   display: flex;
   align-items: center;
@@ -281,128 +289,151 @@
   box-shadow: 0 6px 20px rgba(171, 40, 250, 0.35);
 }
 
-.card-title-group {
+.svc-title-group {
   flex: 1;
+  text-align: left;
 }
 
-.card-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 0.4rem 0;
-  line-height: 1.25;
+.svc-title {
+  font-family: var(--font-heading, 'Syne', sans-serif) !important;
+  font-size: 1.32rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-align: left !important;
+  margin: 0 0 0.35rem 0 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+  height: auto !important;
+  display: block !important;
+  width: auto !important;
 }
 
-.card-tagline {
-  font-size: 0.9rem;
+.svc-tagline {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
   line-height: 1.45;
+  text-align: left;
 }
 
 /* Tech Stack Chips */
-.tech-stack-row {
+.svc-tech-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
   margin-bottom: 1.25rem;
 }
 
-.tech-chip {
-  font-size: 0.75rem;
+.svc-tech-chip {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.74rem;
   font-weight: 500;
   color: #e0e0e0;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.25rem 0.65rem;
   border-radius: 0.4rem;
+  line-height: 1.2;
 }
 
-.card-divider {
+.svc-divider {
   width: 100%;
   height: 1px;
   background: rgba(255, 255, 255, 0.08);
   margin-bottom: 1.25rem;
 }
 
-/* Features List */
-.features-section {
+/* Features Highlights List */
+.svc-highlights-section {
   margin-bottom: 1.25rem;
   flex: 1;
+  text-align: left;
 }
 
-.section-label {
-  font-size: 0.8rem;
+.svc-highlights-label {
+  font-family: var(--font-heading, 'Syne', sans-serif);
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.75px;
+  letter-spacing: 0.08em;
   color: #c084fc;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  text-align: left;
 }
 
-.features-checklist {
+.svc-highlights-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.7rem;
 }
 
-.features-checklist li {
+.svc-highlight-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
+  gap: 0.75rem;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.45;
+  text-align: left;
 }
 
-.check-icon {
+.svc-check-icon {
   color: #c084fc;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 /* Deliverable Box */
-.deliverable-card-box {
+.svc-deliverable-box {
   background: rgba(171, 40, 250, 0.08);
-  border: 1px solid rgba(171, 40, 250, 0.25);
+  border: 1px solid rgba(171, 40, 250, 0.22);
   border-radius: 0.85rem;
   padding: 0.9rem 1.1rem;
   margin-bottom: 1.25rem;
+  text-align: left;
 }
 
-.deliverable-label {
-  display: block;
+.svc-deliverable-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.08em;
   color: #d896ff;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
-.deliverable-text {
+.svc-deliverable-text {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.85rem;
   color: #ffffff;
   margin: 0;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.45;
+  text-align: left;
 }
 
 /* Accordion Process */
-.card-accordion {
+.svc-accordion {
   margin-bottom: 1.25rem;
   border-top: 1px dashed rgba(255, 255, 255, 0.1);
   padding-top: 1rem;
 }
 
-.accordion-trigger {
+.svc-accordion-trigger {
   width: 100%;
   background: none;
   border: none;
   color: #c084fc;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.82rem;
   font-weight: 600;
   display: flex;
@@ -413,15 +444,11 @@
   transition: color 0.2s;
 }
 
-.accordion-trigger:hover {
+.svc-accordion-trigger:hover {
   color: #e9d5ff;
 }
 
-.chevron-icon {
-  transition: transform 0.3s ease;
-}
-
-.accordion-trigger.expanded .chevron-icon {
+.svc-accordion-trigger.expanded .chevron-icon {
   transform: rotate(180deg);
 }
 
@@ -469,14 +496,15 @@
 }
 
 /* Card CTA button */
-.card-action-bar {
+.svc-action-bar {
   margin-top: auto;
 }
 
-.card-cta-btn {
+.svc-cta-btn {
   width: 100%;
   padding: 0.85rem 1.25rem;
   border-radius: 0.85rem;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -491,7 +519,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-cta-btn:hover {
+.svc-cta-btn:hover {
   background: linear-gradient(135deg, rgba(171, 40, 250, 0.6) 0%, rgba(124, 21, 159, 0.6) 100%);
   border-color: rgba(171, 40, 250, 0.8);
   box-shadow: 0 6px 20px rgba(171, 40, 250, 0.35);
@@ -627,7 +655,7 @@
     grid-template-columns: 1fr;
   }
 
-  .service-card-modern {
+  .svc-card {
     padding: 1.5rem;
   }
 }

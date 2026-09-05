@@ -22,14 +22,18 @@ const HomeContent = () => {
       <div className="content">
         {/* Left Content */}
         <div className="left-content">
+          <div className="hero-eyebrow-badge">
+            <span className="badge-pulse"></span>
+            RAPID MVP & DIGITAL PRODUCT STUDIO
+          </div>
           <h1 className="home-hero-title">
             Launch-Ready<br />
-            Websites and Apps.<br />
-            MVPs Built in 1 Week*
+            Websites & Apps.<br />
+            <span className="hero-highlight">MVPs Built in 1 Week*</span>
           </h1>
           
           <p className="hero-description">
-            Custom digital products, designed with precision and delivered with speed — no shortcuts, no compromises.
+            Custom digital products, designed with precision and delivered with speed: no shortcuts, no compromises.
           </p>
 
           <div className="buttons">
