@@ -1,12 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/ContactUs.css';
 import Button2 from './Button2';
 import BottomPattern from '../assets/bottom_pattern.png';
 import BlurImage from '../assets/Blur.png';
-import ContactUsImage from '../assets/ContactUs.png';
+import lottie from 'lottie-web';
+import contactAnimation from '../assets/lottie_animations/Contact.json';
 import { motion } from 'framer-motion';
 
 const ContactUs = () => {
+  const animContainer = useRef(null);
+
+  useEffect(() => {
+    if (!animContainer.current) return;
+
+    animContainer.current.innerHTML = '';
+
+    const animInstance = lottie.loadAnimation({
+      container: animContainer.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: contactAnimation,
+    });
+
+    return () => {
+      animInstance.destroy();
+    };
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -252,7 +272,7 @@ ${data.message}
                   </div>
 
                   <div className="form-image">
-                    <img src={ContactUsImage} alt="Contact Us Illustration" />
+                    <div className="contact-lottie-container" ref={animContainer}></div>
                   </div>
                 </div>
               </div>

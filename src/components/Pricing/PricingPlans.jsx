@@ -16,8 +16,6 @@ const SERVICE_PACKAGES = [
     name: 'UI/UX Design & Prototype',
     category: 'Design Sprint',
     badge: 'Fast Turnaround',
-    price: '$1,499',
-    period: ' / project',
     turnaround: '3-5 Days',
     icon: Palette,
     isPopular: false,
@@ -37,8 +35,6 @@ const SERVICE_PACKAGES = [
     name: 'Full-Stack Web Platform',
     category: 'Development Sprint',
     badge: 'Most Popular',
-    price: '$3,499',
-    period: ' / project',
     turnaround: '2-3 Weeks',
     icon: Code2,
     isPopular: true,
@@ -60,8 +56,6 @@ const SERVICE_PACKAGES = [
     name: 'Cross-Platform Mobile App',
     category: 'Mobile Sprint',
     badge: 'iOS & Android',
-    price: '$3,999',
-    period: ' / project',
     turnaround: '3-4 Weeks',
     icon: Smartphone,
     isPopular: false,
@@ -152,10 +146,9 @@ const PricingPlans = () => {
               <p className="plan-description">{plan.description}</p>
 
               <div className="price-container">
-                <div className="price-row">
-                  <span className="price-prefix">From</span>
-                  <span className="price-amount">{plan.price}</span>
-                  <span className="price-period">{plan.period}</span>
+                <div className="package-scope-row">
+                  <span className="package-scope-tag">FIXED-SCOPE SPRINT</span>
+                  <span className="package-scope-value">Custom Scope</span>
                 </div>
                 <div className="turnaround-pill">
                   <Clock size={13} />

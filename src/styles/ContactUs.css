@@ -118,6 +118,23 @@
   align-items: center;
 }
 
+.contact-lottie-container {
+  width: 100%;
+  max-width: 380px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: transparent;
+}
+
+.contact-lottie-container svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .form-image img {
   width: 100%;
   max-width: 330px;
@@ -219,6 +236,11 @@
   .form-image img {
     max-width: 350px;
   }
+
+  .contact-lottie-container {
+    max-width: 340px;
+    height: 340px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -254,6 +276,11 @@
 
   .form-image img {
     max-width: 300px;
+  }
+
+  .contact-lottie-container {
+    max-width: 290px;
+    height: 290px;
   }
 
   .contact-form-wrapper {
@@ -316,6 +343,11 @@
     max-width: 250px;
   }
 
+  .contact-lottie-container {
+    max-width: 240px;
+    height: 240px;
+  }
+
   .contact-form-wrapper {
     margin: 0 1rem;
     padding: 0 0.75rem;
@@ -367,6 +399,11 @@
 
   .form-image img {
     max-width: 200px;
+  }
+
+  .contact-lottie-container {
+    max-width: 200px;
+    height: 200px;
   }
 
   .contact-form-wrapper {
