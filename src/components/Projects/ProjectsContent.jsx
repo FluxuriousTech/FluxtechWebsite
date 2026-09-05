@@ -91,6 +91,24 @@ const PROJECTS = {
       image: BaysideSportsImage,
       videoUrl: 'https://player.vimeo.com/video/1107824369?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
     },
+    { 
+      id: 5, 
+      reverse: false, 
+      title: 'EmergentOS', 
+      subheader: 'Advisory Operations Platform for Financial Brokers', 
+      description: 'Built a comprehensive SaaS platform for financial advisors featuring client onboarding automation, CRM, premium tracking, and compliance-ready workflows — all in one fast, secure workspace.', 
+      image: ProjectImage,
+      videoUrl: 'https://player.vimeo.com/video/1224197390?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+    { 
+      id: 6, 
+      reverse: true, 
+      title: 'Gamers Tech Republic', 
+      subheader: 'Premium Esports Gaming Cafe Website', 
+      description: 'Designed a high-energy esports cafe website featuring dual-zone booking, custom PC build configurator, competitive leaderboards, and a bold neon-red gaming aesthetic — built for Thane\'s premier gaming arena.', 
+      image: ProjectImage,
+      videoUrl: 'https://player.vimeo.com/video/1224198257?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
   ],
   'Web Design': [
     { 
@@ -159,6 +177,8 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, vid
   const isSecondWebDev = title === 'Gym Website';
   const isThirdWebDev = title === 'BlingxBeyond';
   const isFourthWebDev = title === 'Bayside Sports Redesign';
+  const isFifthWebDev = title === 'EmergentOS';
+  const isSixthWebDev = title === 'Gamers Tech Republic';
   const isFirstWebDesign = title === 'Aarohan';
   const isSecondWebDesign = title === 'Student Dashboard';
   const isThirdWebDesign = title === 'Fashion Website';
@@ -289,6 +309,14 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, vid
           <Link to="/projects/webdev/4" style={{ alignSelf: 'center', textDecoration: 'none' }}>
             <Button2>View Project</Button2>
           </Link>
+        ) : isFifthWebDev ? (
+          <Link to="/projects/webdev/5" style={{ alignSelf: 'center', textDecoration: 'none' }}>
+            <Button2>View Project</Button2>
+          </Link>
+        ) : isSixthWebDev ? (
+          <Link to="/projects/webdev/6" style={{ alignSelf: 'center', textDecoration: 'none' }}>
+            <Button2>View Project</Button2>
+          </Link>
         ) : isFirstBackend ? (
           <Link to="/projects/backendsystems/1" style={{ alignSelf: 'center', textDecoration: 'none' }}>
             <Button2>View Project</Button2>
@@ -343,6 +371,14 @@ const ProjectCard = ({ reverse, index, title, subheader, description, image, vid
           </Link>
         ) : isFourthWebDev ? (
           <Link to="/projects/webdev/4" style={{ textDecoration: 'none' }}>
+            <Button2>View Project</Button2>
+          </Link>
+        ) : isFifthWebDev ? (
+          <Link to="/projects/webdev/5" style={{ textDecoration: 'none' }}>
+            <Button2>View Project</Button2>
+          </Link>
+        ) : isSixthWebDev ? (
+          <Link to="/projects/webdev/6" style={{ textDecoration: 'none' }}>
             <Button2>View Project</Button2>
           </Link>
         ) : isFirstBackend ? (

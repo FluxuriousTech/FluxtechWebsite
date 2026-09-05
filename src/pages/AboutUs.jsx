@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Button2 from '../components/Button2.jsx';
+import SEOHead from '../components/SEOHead.jsx';
 import '../styles/AboutUs.css';
 import BlurImage from '../assets/Blur.png';
 import BottomPattern from '../assets/bottom_pattern.png';
@@ -9,6 +10,28 @@ import TeamWorkImage from '../assets/TeamWork.png';
 import lottie from 'lottie-web';
 import teamAnimation from '../assets/lottie_animations/team.json';
 import { motion } from 'framer-motion';
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Fluxurious Tech",
+  "description": "A creative tech team building smart digital solutions. 150+ projects delivered, 50+ happy clients.",
+  "url": "https://www.fluxurioustech.com/about",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Fluxurious Tech",
+    "url": "https://www.fluxurioustech.com",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "10-50"
+    },
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Mumbai, India"
+    },
+    "slogan": "A creative tech team building smart digital solutions."
+  }
+};
 
 const AboutUs = () => {
   const animContainer = useRef(null);
@@ -39,12 +62,18 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="about-container">
+    <main className="about-container">
+      <SEOHead
+        title="About Us — Creative Tech Studio in Mumbai"
+        description="A creative tech team building smart digital solutions. 150+ projects delivered, 50+ happy clients, 7-day average delivery. Based in Mumbai, India."
+        canonicalPath="/about"
+        structuredData={aboutPageSchema}
+      />
       <Navbar />
       
       {/* Hero Section */}
       <section className="about-hero">
-        <img src={BlurImage} alt="Blur" className="about-blur-top" />
+        <img src={BlurImage} alt="" className="about-blur-top" />
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
@@ -118,14 +147,14 @@ const AboutUs = () => {
             </motion.p>
           </div>
           <div className="team-image">
-            <img src={TeamWorkImage} alt="Teamwork" />
+            <img src={TeamWorkImage} alt="Fluxurious Tech team collaborating on digital projects" />
           </div>
         </div>
       </section>
 
-      <img src={BottomPattern} alt="Bottom Pattern" className="about-bottom-pattern" />
+      <img src={BottomPattern} alt="" className="about-bottom-pattern" />
       <Footer />
-    </div>
+    </main>
   );
 };
 

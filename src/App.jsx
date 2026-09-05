@@ -10,6 +10,8 @@ import WebDev1 from './pages/IndividualProjects/WebDev/WebDev1';
 import WebDev2 from './pages/IndividualProjects/WebDev/WebDev2';
 import WebDev3 from './pages/IndividualProjects/WebDev/WebDev3';
 import WebDev4 from './pages/IndividualProjects/WebDev/WebDev4';
+import WebDev5 from './pages/IndividualProjects/WebDev/WebDev5';
+import WebDev6 from './pages/IndividualProjects/WebDev/WebDev6';
 import Design1 from './pages/IndividualProjects/WebDesign/Design1';
 import Design2 from './pages/IndividualProjects/WebDesign/Design2';
 import Design3 from './pages/IndividualProjects/WebDesign/Design3';
@@ -45,6 +47,8 @@ function App() {
         <Route path="/projects/webdev/2" element={<WebDev2 />} />
         <Route path="/projects/webdev/3" element={<WebDev3 />} />
         <Route path="/projects/webdev/4" element={<WebDev4 />} />
+        <Route path="/projects/webdev/5" element={<WebDev5 />} />
+        <Route path="/projects/webdev/6" element={<WebDev6 />} />
         <Route path="/projects/webdesign/1" element={<Design1 />} />
         <Route path="/projects/webdesign/2" element={<Design2 />} />
         <Route path="/projects/webdesign/3" element={<Design3 />} />
