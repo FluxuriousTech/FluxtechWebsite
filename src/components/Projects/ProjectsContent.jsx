@@ -10,6 +10,8 @@ import NetwealthIndiaImage from '../../assets/PROJECT/WebDev/NetwealthIndia.png'
 import GymWebsiteImage from '../../assets/PROJECT/WebDev/GymWebsite.png';
 import LuxuryVacationsImage from '../../assets/PROJECT/WebDev/LuxuryVacations.png';
 import BaysideSportsImage from '../../assets/PROJECT/WebDev/BaysideSports.png';
+import EmergentOSImage from '../../assets/PROJECT/WebDev/EmergentOS.png';
+import GamersTechRepublicImage from '../../assets/PROJECT/WebDev/GamersTechRepublic.png';
 import AarohanImage from '../../assets/PROJECT/WebDesign/Aarohan.png';
 import StudentDashboardImage from '../../assets/PROJECT/WebDesign/Student_Dashboard.png';
 import FashionWebDesignImage from '../../assets/PROJECT/WebDesign/FashionWebDesign.png';
@@ -67,6 +69,24 @@ const PROJECTS = {
     { 
       id: 2, 
       reverse: true, 
+      title: 'Gamers Tech Republic', 
+      subheader: 'Premium Esports Gaming Cafe Website', 
+      description: 'Designed a high-energy esports cafe website featuring dual-zone booking, custom PC build configurator, competitive leaderboards, and a bold neon-red gaming aesthetic — built for Thane\'s premier gaming arena.', 
+      image: GamersTechRepublicImage,
+      videoUrl: 'https://player.vimeo.com/video/1224198257?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+    { 
+      id: 3, 
+      reverse: false, 
+      title: 'EmergentOS', 
+      subheader: 'Advisory Operations Platform for Financial Brokers', 
+      description: 'Built a comprehensive SaaS platform for financial advisors featuring client onboarding automation, CRM, premium tracking, and compliance-ready workflows — all in one fast, secure workspace.', 
+      image: EmergentOSImage,
+      videoUrl: 'https://player.vimeo.com/video/1224197390?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+    },
+    { 
+      id: 4, 
+      reverse: true, 
       title: 'Gym Website', 
       subheader: 'Modern, powerful, and built to move', 
       description: 'Sleek design. Fast access. Made for members who lift, train, and hustle, and for the trainers who keep them going.', 
@@ -74,17 +94,8 @@ const PROJECTS = {
       videoUrl: 'https://player.vimeo.com/video/1107824414?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
     },
     { 
-      id: 3, 
+      id: 5, 
       reverse: false, 
-      title: 'BlingxBeyond', 
-      subheader: 'Timeless Fashion & Jewelry', 
-      description: 'Designed a stunning e-commerce platform for premium jewelry and fashion accessories, where elegant design meets seamless shopping experience.', 
-      image: LuxuryVacationsImage,
-      videoUrl: 'https://player.vimeo.com/video/1107823130?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
-    },
-    { 
-      id: 4, 
-      reverse: true, 
       title: 'Bayside Sports Redesign', 
       subheader: 'Scalable Online Store', 
       description: 'Revamped the site for speed, clarity, and energy so fans and players connect with the action in seconds.', 
@@ -92,22 +103,13 @@ const PROJECTS = {
       videoUrl: 'https://player.vimeo.com/video/1107824369?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
     },
     { 
-      id: 5, 
-      reverse: false, 
-      title: 'EmergentOS', 
-      subheader: 'Advisory Operations Platform for Financial Brokers', 
-      description: 'Built a comprehensive SaaS platform for financial advisors featuring client onboarding automation, CRM, premium tracking, and compliance-ready workflows — all in one fast, secure workspace.', 
-      image: ProjectImage,
-      videoUrl: 'https://player.vimeo.com/video/1224197390?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
-    },
-    { 
       id: 6, 
       reverse: true, 
-      title: 'Gamers Tech Republic', 
-      subheader: 'Premium Esports Gaming Cafe Website', 
-      description: 'Designed a high-energy esports cafe website featuring dual-zone booking, custom PC build configurator, competitive leaderboards, and a bold neon-red gaming aesthetic — built for Thane\'s premier gaming arena.', 
-      image: ProjectImage,
-      videoUrl: 'https://player.vimeo.com/video/1224198257?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
+      title: 'BlingxBeyond', 
+      subheader: 'Timeless Fashion & Jewelry', 
+      description: 'Designed a stunning e-commerce platform for premium jewelry and fashion accessories, where elegant design meets seamless shopping experience.', 
+      image: LuxuryVacationsImage,
+      videoUrl: 'https://player.vimeo.com/video/1107823130?badge=0&autopause=0&player_id=0&app_id=58479&controls=1&title=0&byline=0&portrait=0'
     },
   ],
   'Web Design': [
